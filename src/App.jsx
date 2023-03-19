@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Brands from "./components/Brands";
 import About from "./components/About";
 import Skils from "./components/Skils";
+import Portfolio from "./components/Portfolio"
 const App = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const App = () => {
       <Brands />
       <About />
       <Skils/>
+      <Portfolio/>
       <div style={{ height: "2000px" }}></div>
     </div>
   );
