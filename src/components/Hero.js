@@ -1,5 +1,5 @@
 import React from "react";
-import WomanImg from "../assets/img/banner-woman2.webp";
+import photo from "../assets/img/design.png";
 
 function Hero() {
   return (
@@ -10,22 +10,22 @@ function Hero() {
       <div className="container mx-auto h-full">
         <div className="flex items-center h-full pt-8">
           <div className="flex-1 flex flex-col items-center lg:items-start">
-            <p className="text-lg text-accent mb-[22px] mt-[40px]">
+            <p className="text-2xl text-accent mb-[22px] mt-[40px]">
               Hey, I'm Dixit 👋
             </p>
             <h1 className="text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-4xl lg:leading-[1.2] font-bold md:tracking-[2px]">
-              I Build & Design <br /> Web Interfaces.
+              I Write smart-contracts <br />& Design  Web Interfaces.
             </h1>
             <p className="pt-4 pb-8 md:pt-6 md:pb-12 max-w-[480px] text-lg text-center lg:text-left">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-              delectus illo impedit tempor.
+              I'm a blockchain developer who loves to create innovative and
+              secure solutions for the digital world.
             </p>
             <button className="btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all">
-              Work with me
+              Mint NFT
             </button>
           </div>
-          <div className="hidden lg:flex flex-1 justify-end items-end h-full">
-            <img src={WomanImg} alt="" />
+          <div className="hidden lg:flex flex-1 justify-end items-end h-[800px]">
+            <img className="h-[1000px]" src={photo} alt="" />
           </div>
         </div>
       </div>

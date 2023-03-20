@@ -7,7 +7,9 @@ const Nav = () => {
   return (
     <div className="flex space-x-8 capitalize text-[15px]">
       {navigation.map((item, index) => {
+        {/* console.log(item.href) */}
         return (
+          
           <li
             className="text-white hover:text-accen cursor-pointer"
             key={index}

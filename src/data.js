@@ -35,7 +35,9 @@ import SkillImg4 from './assets/img/skills/reactjs.png';
 import SkillImg5 from './assets/img/skills/nextjs.png';
 import SkillImg6 from './assets/img/skills/nodejs.png';
 import SkillImg7 from './assets/img/skills/git.png';
-import SkillImg8 from './assets/img/skills/figma.png';
+import SkillImg8 from './assets/img/skills/ethers.png';
+import SkillImg9 from './assets/img/skills/web3.png';
+import SkillImg10 from './assets/img/skills/solidity.png'
 
 // testimonial images
 import TestiImage1 from './assets/img/testimonials/testimonial-1.webp';
@@ -190,8 +192,14 @@ export const skills = [
     image: SkillImg7,
   },
   {
+    image: SkillImg9,
+  },
+  {
     image: SkillImg8,
   },
+  {
+    image: SkillImg10,
+  }
 ];
 
 // services
@@ -253,12 +261,12 @@ export const contact = [
     icon: <FiMail />,
     title: 'Have a question?',
     subtitle: 'I am here to help you.',
-    description: 'Email me at hello@youremail.com',
+    description: 'Email me at tilajidixit@gmail.com',
   },
   {
     icon: <FiMapPin />,
     title: 'Current Location',
-    subtitle: 'Bucharest, Romania',
+    subtitle: 'Ahmedabad, Gujarat, India.',
     description: 'Serving clients worldwide',
   },
 ];
