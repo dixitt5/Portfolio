@@ -4,9 +4,9 @@ const About = () => {
   return (
     <section className="section bg-secondary">
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-24 ">
+        <div className="flex flex-row xl:flex-col gap-24 ">
           <img
-            className="object-cover h-full w-[566px] md:mx-auto max-w-fit rounded-[12px]"
+            className="object-cover h-full w-[480px] md:mx-auto max-w-fit rounded-[12px]"
             src={Image}
             alt=""
           />

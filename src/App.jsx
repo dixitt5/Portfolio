@@ -6,7 +6,12 @@ import Hero from "./components/Hero";
 import Brands from "./components/Brands";
 import About from "./components/About";
 import Skils from "./components/Skils";
-import Portfolio from "./components/Portfolio"
+import Portfolio from "./components/Portfolio";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import BackToTopBtn from "./components/BackToTopBtn";
+
 const App = () => {
   return (
     <div>
@@ -14,9 +19,12 @@ const App = () => {
       <Hero />
       <Brands />
       <About />
-      <Skils/>
-      <Portfolio/>
-      <div style={{ height: "2000px" }}></div>
+      <Skils />
+      <Portfolio />
+      <Services />
+      <Contact />
+      <Footer/>
+      <BackToTopBtn/>
     </div>
   );
 };

@@ -16,11 +16,11 @@ const Header = () => {
     <header
       className={`${
         bg ? "bg-tertiary h-20" : "h-24"
-      }flex items-center fixed top-8 w-full text-white z-10 transition-all duration-300`}
+      } flex items-center fixed top-0 w-full  text-white z-10 transition-all duration-300`}
     >
-      <div className="container mx-auto h-full flex items-counter justify-between">
+      <div className="container mx-auto h-full flex items-center justify-between">
         <a href="#">
-          <img className='w-10 h-10' src={Logo} alt=""></img>
+          <img className='w-20 h-20' src={Logo} alt=""></img>
         </a>
         <div className="hidden lg:block">
           <Nav />
