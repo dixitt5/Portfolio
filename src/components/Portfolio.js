@@ -10,9 +10,7 @@ const Portfolio = () => {
             My Latest Work
           </h2>
           <p className="subtitle">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore
-            iusto earum reiciendis ipsa neque modi culpa impedit quod
-            consequuntur ut?
+          With a deep passion for technology, I have worked on diverse projects, ranging from cutting-edge blockchain solutions to innovative web2 applications. My experience has given me a unique skill set and a fresh perspective to approach challenges. I'm excited to continue contributing to the ever-evolving world of technology.
           </p>
         </div>
         <Projects />

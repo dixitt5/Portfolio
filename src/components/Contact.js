@@ -1,7 +1,21 @@
-import React from "react";
+import React, {useRef} from "react";
 import {contact} from "../data";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_o4qkqnu', 'template_n0lwc4d', form.current, 'gB8gblirnA2r2XifJ')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      alert("email sent!");
+      e.target.reset();
+  };
   return (
     <section className="section bg-primary" id="contact">
       <div className="container mx-auto">
@@ -10,9 +24,7 @@ const Contact = () => {
             Contact Me
           </h2>
           <p className="subtitle">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            obcaecati quidem reiciendis earum, eveniet numquam commodi saepe
-            quis possimus hic!
+          The part is not just a way to get in touch, it's an opportunity to make a meaningful connection. Whether you're a potential client, collaborator, or simply interested in exchanging ideas, clicking that button can be the first step towards building a valuable relationship.
           </p>
         </div>
         <div className="flex flex-col lg:gap-x-8 lg:flex-row">
@@ -32,13 +44,13 @@ const Contact = () => {
               );
             })}     
           </div>
-          <form className="space-y-8 w-full max-w-[780px]">
+          <form ref={form} className="space-y-8 w-full max-w-[780px]" onSubmit={sendEmail}>
             <div className="flex gap-8">
-                <input className="input" type="text" placeholder="Your Name"/>
-                <input className="input" type="email" placeholder="Your Email"/>
+                <input className="input" type="text" placeholder="Your Name" name="name"/>
+                <input className="input" type="email" placeholder="Your Email" name="email"/>
             </div>
-            <input type="text" className="input" placeholder="Subject"/>
-            <textarea className="textarea" placeholder="Your Message"></textarea>
+            <input type="text" className="input" placeholder="Subject" name="subject"/>
+            <textarea className="textarea" placeholder="Your Message" name="message"></textarea>
             <button className="btn btn-lg bg-accent hover:bg-accent-hover">Send Message</button>
           </form>
         </div>

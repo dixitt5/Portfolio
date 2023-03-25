@@ -13,7 +13,7 @@ function Hero() {
             <p className="text-2xl text-accent mb-[22px] mt-[40px]">
               Hey, I'm Dixit 👋
             </p>
-            <h1 className="text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-4xl lg:leading-[1.2] font-bold md:tracking-[2px]">
+            <h1 className="text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-3xl lg:leading-[1.2] font-bold md:tracking-[2px]">
               I Write smart-contracts <br />& Design  Web Interfaces.
             </h1>
             <p className="pt-4 pb-8 md:pt-6 md:pb-12 max-w-[480px] text-lg text-center lg:text-left">
@@ -25,7 +25,7 @@ function Hero() {
             </button>
           </div>
           <div className="hidden lg:flex flex-1 justify-end items-end h-[800px]">
-            <img className="h-[1000px]" src={photo} alt="" />
+            <img className="h-[800px]" src={photo} alt="" />
           </div>
         </div>
       </div>

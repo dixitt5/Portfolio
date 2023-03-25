@@ -1,90 +1,93 @@
 //  icons
 import {
-  FiYoutube,
-  FiInstagram,
+  FiTwitter,
+  FiLinkedin,
   FiGithub,
   FiDribbble,
-  FiLayout,
-  FiSettings,
-  FiPenTool,
-  FiTag,
+  FiEye,
+  FiCodesandbox,
+  FiDollarSign,
+  FiUserCheck,
   FiMail,
   FiMapPin,
-} from 'react-icons/fi';
+} from "react-icons/fi";
 
 // companies icons
-import FreelancerBrandIcon from './assets/img/brands/freelancer.png';
-import UpworkBrandIcon from './assets/img/brands/upwork.png';
-import FiverBrandIcon from './assets/img/brands/fiverr.png';
-import BehanceBrandIcon from './assets/img/brands/behance.png';
-import DribbbleBrandIcon from './assets/img/brands/dribbble.png';
+import FreelancerBrandIcon from "./assets/img/brands/freelancer.png";
+import UpworkBrandIcon from "./assets/img/brands/upwork.png";
+import FiverBrandIcon from "./assets/img/brands/fiverr.png";
+import BehanceBrandIcon from "./assets/img/brands/behance.png";
+import DribbbleBrandIcon from "./assets/img/brands/dribbble.png";
 
 // projects images
-import Project1 from './assets/img/projects/p1.webp';
-import Project2 from './assets/img/projects/p2.webp';
-import Project3 from './assets/img/projects/p3.webp';
-import Project4 from './assets/img/projects/p4.webp';
-import Project5 from './assets/img/projects/p5.webp';
-import Project6 from './assets/img/projects/p6.webp';
+import Project1 from "./assets/img/projects/p1.webp";
+import Project2 from "./assets/img/projects/p2.webp";
+import Project3 from "./assets/img/projects/p3.webp";
+import Project4 from "./assets/img/projects/p4.webp";
+import Project5 from "./assets/img/projects/p5.webp";
+import Project6 from "./assets/img/projects/p6.webp";
+import Parivartan from "./assets/img/projects/Parivartan.png";
+import DEX from "./assets/img/projects/DEX.png";
+import ICO from "./assets/img/projects/ICO.png";
+import InvoiceManager from "./assets/img/projects/InvoiceManager.png";
+import MdownBlog from "./assets/img/projects/MdownBlog.png";
+import NFTCollection from "./assets/img/projects/NFTCollection.png";
+import SocioDAO from "./assets/img/projects/SocioDAO.png";
 
 // skills images
-import SkillImg1 from './assets/img/skills/html5.png';
-import SkillImg2 from './assets/img/skills/css3.png';
-import SkillImg3 from './assets/img/skills/js.png';
-import SkillImg4 from './assets/img/skills/reactjs.png';
-import SkillImg5 from './assets/img/skills/nextjs.png';
-import SkillImg6 from './assets/img/skills/nodejs.png';
-import SkillImg7 from './assets/img/skills/git.png';
-import SkillImg8 from './assets/img/skills/ethers.png';
-import SkillImg9 from './assets/img/skills/web3.png';
-import SkillImg10 from './assets/img/skills/solidity.png'
+import SkillImg1 from "./assets/img/skills/html5.png";
+import SkillImg2 from "./assets/img/skills/css3.png";
+import SkillImg3 from "./assets/img/skills/js.png";
+import SkillImg4 from "./assets/img/skills/reactjs.png";
+import SkillImg5 from "./assets/img/skills/nextjs.png";
+import SkillImg6 from "./assets/img/skills/nodejs.png";
+import SkillImg7 from "./assets/img/skills/git.png";
+import SkillImg8 from "./assets/img/skills/ethers.png";
+import SkillImg9 from "./assets/img/skills/web3.png";
+import SkillImg10 from "./assets/img/skills/solidity.png";
 
 // testimonial images
-import TestiImage1 from './assets/img/testimonials/testimonial-1.webp';
-import TestiImage2 from './assets/img/testimonials/testimonial-2.webp';
-import TestiImage3 from './assets/img/testimonials/testimonial-3.webp';
+import TestiImage1 from "./assets/img/testimonials/testimonial-1.webp";
+import TestiImage2 from "./assets/img/testimonials/testimonial-2.webp";
+import TestiImage3 from "./assets/img/testimonials/testimonial-3.webp";
 
 // navigation
 export const navigation = [
   {
-    name: 'home',
-    href: 'home',
+    name: "home",
+    href: "home",
   },
   {
-    name: 'about',
-    href: 'about',
+    name: "about",
+    href: "about",
   },
   {
-    name: 'portfolio',
-    href: 'portfolio',
+    name: "portfolio",
+    href: "portfolio",
   },
   {
-    name: 'services',
-    href: 'services',
+    name: "Interests",
+    href: "interests",
   },
   {
-    name: 'contact',
-    href: 'contact',
+    name: "contact",
+    href: "contact",
   },
 ];
 
 // social
 export const social = [
   {
-    icon: <FiYoutube />,
-    href: '',
-  },
-  {
-    icon: <FiInstagram />,
-    href: '',
-  },
-  {
     icon: <FiGithub />,
-    href: '',
+    href: "https://github.com/dixitt5",
   },
   {
-    icon: <FiDribbble />,
-    href: '',
+    icon: <FiTwitter/>,
+    href: "https://twitter.com/dixit_tilaji",
+  },
+  {
+    icon: <FiLinkedin />,
+    href: "https://www.linkedin.com/in/dixit5",
   },
 ];
 
@@ -92,80 +95,86 @@ export const social = [
 export const brands = [
   {
     img: FreelancerBrandIcon,
-    href: '',
+    href: "",
   },
   {
     img: UpworkBrandIcon,
-    href: '',
+    href: "",
   },
   {
     img: FiverBrandIcon,
-    href: '',
+    href: "",
   },
   {
     img: BehanceBrandIcon,
-    href: '',
+    href: "",
   },
   {
     img: DribbbleBrandIcon,
-    href: '',
+    href: "",
   },
 ];
 
 // projects
 export const projectsData = [
   {
-    id: '1',
-    image: Project1,
-    name: 'project name 1',
-    category: 'UI/UX design',
+    id: "1",
+    image: Parivartan,
+    name: "Parivartan NFTs",
+    category: "blockchain",
   },
   {
-    id: '2',
-    image: Project2,
-    name: 'project name 2',
-    category: 'web development',
+    id: "2",
+    image: SocioDAO,
+    name: "DAO for housing Societies",
+    category: "blockchain",
   },
   {
-    id: '3',
-    image: Project3,
-    name: 'project name 3',
-    category: 'UI/UX design',
+    id: "3",
+    image: DEX,
+    name: "Decentralised Exchange",
+    category: "blockchain",
   },
   {
-    id: '4',
-    image: Project4,
-    name: 'project name 4',
-    category: 'branding',
+    id: "4",
+    image: InvoiceManager,
+    name: "Invoice Manager",
+    category: "blockchain",
   },
   {
-    id: '5',
-    image: Project5,
-    name: 'project name 5',
-    category: 'web development',
+    id: "5",
+    image: MdownBlog,
+    name: "Blogging In Mark-Down",
+    category: "web development",
   },
   {
-    id: '6',
-    image: Project6,
-    name: 'project name 6',
-    category: 'web development',
+    id: "6",
+    image: NFTCollection,
+    name: "Mint a NFT",
+    category: "blockchain",
+  },
+  {
+    id: "7",
+    image: ICO,
+    name: "Initial Coin Offering",
+    category: "blockchain",
   },
 ];
 
 // projects
 export const projectsNav = [
   {
-    name: 'all',
+    name: "all",
   },
   {
-    name: 'UI/UX Design',
+    name: "Blockchain",
   },
   {
-    name: 'web development',
+    name: "web development",
   },
-  {
-    name: 'branding',
-  },
+  // {
+  //   name: 'branding',
+  // },
 ];
 
 // skill
@@ -199,34 +208,35 @@ export const skills = [
   },
   {
     image: SkillImg10,
-  }
+  },
 ];
 
 // services
 export const services = [
   {
-    icon: <FiLayout />,
-    name: 'Web Design',
+    icon: <FiCodesandbox />,
+    name: "Layer-2 Chains",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.',
+      "Layer-2 chains are secondary blockchain protocols built on top of existing blockchains, designed to improve scalability, speed and efficiency of transactions.",
   },
   {
-    icon: <FiSettings />,
-    name: 'Web Development',
+    icon: <FiEye />,
+    name: "Abstraction in Web3-Interfaces",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.',
+      "Abstraction simplifies complex technical details in web3 interfaces, improving accessibility and usability of blockchain technology for non-technical users.",
   },
   {
-    icon: <FiPenTool />,
-    name: 'Branding',
+    icon: <FiDollarSign />,
+    
+    name: "De-Fi",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.',
+      "DeFi (Decentralized Finance) is a set of blockchain-based financial applications that operate on a decentralized, open-source, and permissionless network.",
   },
   {
-    icon: <FiTag />,
-    name: 'SEO',
+    icon: <FiUserCheck />,
+    name: "Self-Sovereign identity (SSI)",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.',
+      "The SSI model is a digital identity system that empowers individuals with control over their personal information and its usage.",
   },
 ];
 
@@ -235,23 +245,23 @@ export const testimonials = [
   {
     authorImg: TestiImage1,
     authorText:
-      'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
+      "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+    authorName: "Olivia Doe",
+    authorPosition: "Head of Design, Google",
   },
   {
     authorImg: TestiImage2,
     authorText:
-      'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
+      "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+    authorName: "Olivia Doe",
+    authorPosition: "Head of Design, Google",
   },
   {
     authorImg: TestiImage3,
     authorText:
-      'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
-    authorName: 'Olivia Doe',
-    authorPosition: 'Head of Design, Google',
+      "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+    authorName: "Olivia Doe",
+    authorPosition: "Head of Design, Google",
   },
 ];
 
@@ -259,14 +269,14 @@ export const testimonials = [
 export const contact = [
   {
     icon: <FiMail />,
-    title: 'Have a question?',
-    subtitle: 'I am here to help you.',
-    description: 'Email me at tilajidixit@gmail.com',
+    title: "Have a question?",
+    subtitle: "I am here to help you.",
+    description: "Email me at tilajidixit@gmail.com",
   },
   {
     icon: <FiMapPin />,
-    title: 'Current Location',
-    subtitle: 'Ahmedabad, Gujarat, India.',
-    description: 'Serving clients worldwide',
+    title: "Current Location",
+    subtitle: "Ahmedabad, Gujarat, India.",
+    description: "Living the Fullest.",
   },
 ];
