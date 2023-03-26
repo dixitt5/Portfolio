@@ -1,13 +1,23 @@
 import React from "react";
-import Image from "../assets/img/about.webp";
-import { Link } from "react-scroll";
-import { navigation } from "../data";
+import Image from "../assets/img/clipart.avif";
+
+// import { Link } from "react-scroll";
+// import { navigation } from "../data";
+// import {
+//   useConnectModal,
+//   useAccountModal,
+//   useChainModal,
+// } from '@rainbow-me/rainbowkit';
 
 const About = () => {
+  // const { openConnectModal } = useConnectModal();
+  // const { openAccountModal } = useAccountModal();
+  // const { openChainModal } = useChainModal();
   const gotocontact = () => {
     window.location.hash = "#contact";
   };
 
+  // if (isDisconnected) return <div>Disconnected</div>
   // const scrollOnContact = () => {
   //   console.log(navigation.at(4).href);
   //   return (
@@ -22,12 +32,13 @@ const About = () => {
   //     ></Link>
   //   );
   // };
+
   return (
     <section className="section bg-secondary" id="about">
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-24 ">
           <img
-            className="object-cover h-full w-[480px] md:mx-auto max-w-fit rounded-[12px]"
+            className="object-cover h-full w-[350px] md:mx-auto max-w-fit rounded-[12px] sm:w-[400px] md:w-[450px]"
             src={Image}
             alt=""
           />
@@ -56,6 +67,15 @@ const About = () => {
           </div>
         </div>
       </div>
+      {/* {openChainModal && (
+        <button onClick={openChainModal} type="button">
+          Open Chain Modal
+        </button>
+      )} */}
+      {/* <div>
+          {address} 
+          <br></br>
+        </div> */}
     </section>
   );
 };

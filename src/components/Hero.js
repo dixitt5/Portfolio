@@ -1,7 +1,10 @@
 import React from "react";
 import photo from "../assets/img/design.png";
+import WalletComp from "./WalletComp";
 
 function Hero() {
+
+  
   return (
     <section
       id="home"
@@ -20,9 +23,10 @@ function Hero() {
               I'm a blockchain developer who loves to create innovative and
               secure solutions for the digital world.
             </p>
-            <button className="btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all">
+            {/* <button className="btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all">
               Mint NFT
-            </button>
+            </button> */}
+            <WalletComp/>
           </div>
           <div className="hidden lg:flex flex-1 justify-end items-end h-[800px]">
             <img className="h-[800px]" src={photo} alt="" />

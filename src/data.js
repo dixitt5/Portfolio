@@ -45,11 +45,16 @@ import SkillImg7 from "./assets/img/skills/git.png";
 import SkillImg8 from "./assets/img/skills/ethers.png";
 import SkillImg9 from "./assets/img/skills/web3.png";
 import SkillImg10 from "./assets/img/skills/solidity.png";
+import SkillImg11 from "./assets/img/skills/hardhat.png"
+import SkillImg12 from "./assets/img/skills/truffle.png"
+import SkillImg13 from "./assets/img/skills/ipfs.png"
+
+
 
 // testimonial images
-import TestiImage1 from "./assets/img/testimonials/testimonial-1.webp";
-import TestiImage2 from "./assets/img/testimonials/testimonial-2.webp";
-import TestiImage3 from "./assets/img/testimonials/testimonial-3.webp";
+// import TestiImage1 from "./assets/img/testimonials/testimonial-1.webp";
+// import TestiImage2 from "./assets/img/testimonials/testimonial-2.webp";
+// import TestiImage3 from "./assets/img/testimonials/testimonial-3.webp";
 
 // navigation
 export const navigation = [
@@ -122,42 +127,49 @@ export const projectsData = [
     image: Parivartan,
     name: "Parivartan NFTs",
     category: "blockchain",
+    href: "https://parivartan-nfts.web.app/",
   },
   {
     id: "2",
     image: SocioDAO,
     name: "DAO for housing Societies",
     category: "blockchain",
+    href: "https://github.com/dixitt5/Socio-dao",
   },
   {
     id: "3",
     image: DEX,
     name: "Decentralised Exchange",
     category: "blockchain",
+    href: "http://dex-demo.vercel.app/",
   },
   {
     id: "4",
     image: InvoiceManager,
     name: "Invoice Manager",
     category: "blockchain",
+    href: "http://invoice-manager-red.vercel.app/",
   },
   {
     id: "5",
     image: MdownBlog,
     name: "Blogging In Mark-Down",
     category: "web development",
+    href: "https://github.com/dixitt5/Markdown-Blog-Project",
   },
   {
     id: "6",
     image: NFTCollection,
     name: "Mint a NFT",
     category: "blockchain",
+    href: "https://nft-collection-dixitt5.vercel.app/",
   },
   {
     id: "7",
     image: ICO,
     name: "Initial Coin Offering",
     category: "blockchain",
+    href: "https://nft-collection-dixitt5.vercel.app/",
   },
 ];
 
@@ -209,6 +221,15 @@ export const skills = [
   {
     image: SkillImg10,
   },
+  {
+    image: SkillImg11,
+  },
+  {
+    image: SkillImg12,
+  },
+  {
+    image: SkillImg13,
+  },
 ];
 
 // services
@@ -241,29 +262,29 @@ export const services = [
 ];
 
 // testimonials
-export const testimonials = [
-  {
-    authorImg: TestiImage1,
-    authorText:
-      "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
-    authorName: "Olivia Doe",
-    authorPosition: "Head of Design, Google",
-  },
-  {
-    authorImg: TestiImage2,
-    authorText:
-      "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
-    authorName: "Olivia Doe",
-    authorPosition: "Head of Design, Google",
-  },
-  {
-    authorImg: TestiImage3,
-    authorText:
-      "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
-    authorName: "Olivia Doe",
-    authorPosition: "Head of Design, Google",
-  },
-];
+// export const testimonials = [
+//   {
+//     authorImg: TestiImage1,
+//     authorText:
+//       "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+//     authorName: "Olivia Doe",
+//     authorPosition: "Head of Design, Google",
+//   },
+//   {
+//     authorImg: TestiImage2,
+//     authorText:
+//       "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+//     authorName: "Olivia Doe",
+//     authorPosition: "Head of Design, Google",
+//   },
+//   {
+//     authorImg: TestiImage3,
+//     authorText:
+//       "Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.",
+//     authorName: "Olivia Doe",
+//     authorPosition: "Head of Design, Google",
+//   },
+// ];
 
 // contact
 export const contact = [
