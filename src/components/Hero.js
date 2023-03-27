@@ -1,3 +1,4 @@
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import React from "react";
 import photo from "../assets/img/design.png";
 import WalletComp from "./WalletComp";
@@ -27,6 +28,7 @@ function Hero() {
               Mint NFT
             </button> */}
             <WalletComp/>
+            {/* <ConnectButton/> */}
           </div>
           <div className="hidden lg:flex flex-1 justify-end items-end h-[800px]">
             <img className="h-[800px]" src={photo} alt="" />
