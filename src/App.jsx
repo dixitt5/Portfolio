@@ -22,7 +22,6 @@ const App = () => {
       <Services />
       <Contact />
       <Footer/>
-      
       <BackToTopBtn/>
     </div>
   );

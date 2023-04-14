@@ -14,8 +14,9 @@
     "ethers": "^5.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-qr-code": "^2.0.11",
     "react-scripts": "5.0.0",
-    "wagmi": "^0.12.6",
+    "wagmi": "^0.12.10",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

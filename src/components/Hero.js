@@ -1,11 +1,19 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import React from "react";
+import React, { useState } from "react";
 import photo from "../assets/img/design.png";
-import WalletComp from "./WalletComp";
+import { useProvider,useAccount } from "wagmi";
+import SendEth from "./SendEth";
 
 function Hero() {
 
-  
+  const [addr, setAddress] = useState("");
+
+  // const provider = useProvider();
+  // console.log(provider);
+
+   
+  // const {address} = useAccount();
+  // setAddress(address);
   return (
     <section
       id="home"
@@ -27,8 +35,9 @@ function Hero() {
             {/* <button className="btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all">
               Mint NFT
             </button> */}
-            <WalletComp/>
-            {/* <ConnectButton/> */}
+            {/* <WalletComp/> */}
+            <ConnectButton/>
+            <SendEth/>
           </div>
           <div className="hidden lg:flex flex-1 justify-end items-end h-[800px]">
             <img className="h-[800px]" src={photo} alt="" />

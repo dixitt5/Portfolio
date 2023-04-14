@@ -39,7 +39,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Input from "@mui/material/Input";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useTheme } from "@mui/material/styles";
-import {Contract_ABI, Contract_Address} from "../constants"
+import { Contract_ABI, Contract_Address } from "../constants";
+import { ethers, providers } from "ethers";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -64,8 +65,9 @@ const theme = createTheme({
   },
 });
 
-export default function ResponsiveDialog() {
+export default async function ResponsiveDialog() {
   const [open, setOpen] = React.useState(false);
+  const [flag, setFlag] = React.useState(false);
   // const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -92,6 +94,11 @@ export default function ResponsiveDialog() {
   //   </>
   // );
 
+  // const chain = signer.getChainId();
+  // const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+  // const signer = provider.getSigner();
+  // console.log(signer);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -100,9 +107,12 @@ export default function ResponsiveDialog() {
     setOpen(false);
   };
 
-  const Buy = () => {
-    
+  function handleClick() {
+    openConnectModal();
+    setFlag(true);
   }
+
+  const Buy = () => {};
 
   return (
     <div>
@@ -110,6 +120,7 @@ export default function ResponsiveDialog() {
         <Button color="primary" variant="contained" onClick={handleClickOpen}>
           Send Some ETH
         </Button>
+        <ConnectButton />
         <Dialog
           TransitionComponent={Transition}
           keepMounted
@@ -119,13 +130,23 @@ export default function ResponsiveDialog() {
           open={open}
           color="secondary"
         >
-          <DialogTitle id="responsive-dialog-title" color="secondary">
+          <DialogTitle
+            id="responsive-dialog-title"
+            color="primary"
+            style={{
+              backgroundColor: "#36454F",
+            }}
+          >
             {"Give me some ETH would ya?"}
           </DialogTitle>
-          <DialogContent>
-            <DialogContent >
+          <DialogContent style={{ backgroundColor: "#36454F" }}>
+            <DialogContent>
               {openConnectModal && (
-                <button onClick={openConnectModal}  type="button" className="justify-center">
+                <button
+                  onClick={handleClick}
+                  type="button"
+                  // className="justify-center"
+                >
                   Connect Wallet
                 </button>
               )}
@@ -142,7 +163,11 @@ export default function ResponsiveDialog() {
               />
             </FormControl>
           </DialogContent>
-          <DialogActions>
+          <DialogActions
+            style={{
+              backgroundColor: "#36454F",
+            }}
+          >
             <Button autoFocus onClick={handleClose} color="error">
               Disagree
             </Button>
