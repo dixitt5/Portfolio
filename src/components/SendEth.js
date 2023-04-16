@@ -91,17 +91,17 @@ const SendEth = () => {
         <div>
           <Typography
             variant="h6"
-            display="block"
+            display="flex"
             gutterBottom
-            sx={{ mt: "10px", marginLeft: "40px", marginBottom: "10px" }}
+            sx={{ marginLeft: "50px", marginBottom: "5px" }}
           >
             Withdraw Funds
           </Typography>
           <Typography
             variant="subtitle"
-            display="block"
+            display="flex"
             gutterBottom
-            sx={{ marginLeft: "20px", marginBottom: "10px" }}
+            sx={{ marginLeft: "30px", marginBottom: "10px" }}
           >
             Contract Balance: ${balance}
           </Typography>
@@ -111,8 +111,10 @@ const SendEth = () => {
             onClick={Withdraw}
             sx={{
               margin: "auto",
+              marginLeft: "65px",
               display: "flex",
               textAlign: "center",
+              mb: "20px",
             }}
           >
             Withdraw
@@ -128,7 +130,7 @@ const SendEth = () => {
 
   if (address) {
     return (
-      <div style={{display: "inline"}}>
+      <div style={{ display: "inline", margin: "20px" }}>
         <ThemeProvider theme={theme}>
           <Container maxWidth="100%" sx={{ display: "flex" }}>
             <Box sx={{ display: "block" }}>
@@ -136,59 +138,60 @@ const SendEth = () => {
                 variant="h6"
                 display="block"
                 gutterBottom
-                sx={{ mt: "20px" }}
+                sx={{
+                  fontWeight: "bold",
+                  padding: "20px",
+                  marginLeft: "-40%",
+                }}
               >
-                Send Funds
+                Send Funds:
               </Typography>
             </Box>
             <Box
               sx={{
-                marginTop: "10px",
-                bgcolor: "#808080",
-                height: "60px",
-                maxWidth: "300px",
-                display: "block",
+                marginTop: "25px",
+                height: "30px",
+                maxWidth: "150px",
+                display: "flex",
+                backgroundColor: "white",
+                marginLeft: "-20%",
+                borderRadius: "2.5px",
               }}
             >
-              <FormControl fullWidth sx={{ m: 1 }} variant="standard">
-                <InputLabel htmlFor="standard-adornment-amount">
-                  Tokens
-                </InputLabel>
-                <Input
-                  id="standard-adornment-amount"
-                  startAdornment={
-                    <InputAdornment position="start">$</InputAdornment>
-                  }
-                  onChange={(e) => setFundValue(e.target.value)}
-                />
-              </FormControl>
+              <Input
+                id="standard-adornment-amount"
+                startAdornment={
+                  <InputAdornment position="start">$</InputAdornment>
+                }
+                onChange={(e) => setFundValue(e.target.value)}
+              />
             </Box>
-            
-              <Box
+
+            <Box
+              sx={{
+                marginTop: "10px",
+                height: "60px",
+                marginBottom: "5px",
+                display: "flex",
+                marginLeft: "5%",
+              }}
+            >
+              <Button
+                color="primary"
+                variant="contained"
+                onClick={SendEther}
                 sx={{
-                  marginTop: "10px",
-                  height: "60px",
-                  marginBottom: "5px",
-                  display: "flex",
+                  margin: "auto",
+                  // display: "flex",
+                  textAlign: "center",
                 }}
               >
-                <Button
-                  color="primary"
-                  variant="contained"
-                  onClick={SendEther}
-                  sx={{
-                    margin: "auto",
-                    // display: "flex",
-                    textAlign: "center",
-                  }}
-                >
-                  Send
-                </Button>
-              </Box>
-            
+                Send
+              </Button>
+            </Box>
           </Container>
 
-          <Container sx={{display: "flex"}}>
+          <Container sx={{ display: "flex" }}>
             <Box sx={{ display: "flex" }}>{renderOwnerDashboard()}</Box>
           </Container>
         </ThemeProvider>
