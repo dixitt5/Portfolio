@@ -20,19 +20,14 @@ import BehanceBrandIcon from "./assets/img/brands/behance.png";
 import DribbbleBrandIcon from "./assets/img/brands/dribbble.png";
 
 // projects images
-import Project1 from "./assets/img/projects/p1.webp";
-import Project2 from "./assets/img/projects/p2.webp";
-import Project3 from "./assets/img/projects/p3.webp";
-import Project4 from "./assets/img/projects/p4.webp";
-import Project5 from "./assets/img/projects/p5.webp";
-import Project6 from "./assets/img/projects/p6.webp";
 import Parivartan from "./assets/img/projects/Parivartan.png";
 import DEX from "./assets/img/projects/DEX.png";
 import ICO from "./assets/img/projects/ICO.png";
 import InvoiceManager from "./assets/img/projects/InvoiceManager.png";
 import MdownBlog from "./assets/img/projects/MdownBlog.png";
 import NFTCollection from "./assets/img/projects/NFTCollection.png";
-import SocioDAO from "./assets/img/projects/SocioDAO.png";
+import SmartHive from "./assets/img/projects/SmartHive.png";
+import Tatrix from "./assets/img/projects/Tatrix.jpg";
 
 // skills images
 import SkillImg1 from "./assets/img/skills/html5.png";
@@ -45,16 +40,14 @@ import SkillImg7 from "./assets/img/skills/git.png";
 import SkillImg8 from "./assets/img/skills/ethers.png";
 import SkillImg9 from "./assets/img/skills/web3.png";
 import SkillImg10 from "./assets/img/skills/solidity.png";
-import SkillImg11 from "./assets/img/skills/hardhat.png"
-import SkillImg12 from "./assets/img/skills/truffle.png"
-import SkillImg13 from "./assets/img/skills/ipfs.png"
-
-
-
-// testimonial images
-// import TestiImage1 from "./assets/img/testimonials/testimonial-1.webp";
-// import TestiImage2 from "./assets/img/testimonials/testimonial-2.webp";
-// import TestiImage3 from "./assets/img/testimonials/testimonial-3.webp";
+import SkillImg11 from "./assets/img/skills/hardhat.png";
+import SkillImg12 from "./assets/img/skills/truffle.png";
+import SkillImg13 from "./assets/img/skills/ipfs.png";
+import SkillImg14 from "./assets/img/skills/firebase.png";
+import SkillImg15 from "./assets/img/skills/wagmi.png";
+import SkillImg16 from "./assets/img/skills/livepeer.png";
+import SkillImg17 from "./assets/img/skills/material.png";
+import SkillImg18 from "./assets/img/skills/chakra.png";
 
 // navigation
 export const navigation = [
@@ -87,7 +80,7 @@ export const social = [
     href: "https://github.com/dixitt5",
   },
   {
-    icon: <FiTwitter/>,
+    icon: <FiTwitter />,
     href: "https://twitter.com/dixit_tilaji",
   },
   {
@@ -131,41 +124,48 @@ export const projectsData = [
   },
   {
     id: "2",
-    image: SocioDAO,
-    name: "DAO for housing Societies",
+    image: Tatrix,
+    name: "Tatrix - A Web3 GameFi Engagement Platform",
     category: "blockchain",
-    href: "https://github.com/dixitt5/Socio-dao",
+    href: "https://tatrix-web3-linux369.vercel.app/",
   },
   {
     id: "3",
+    image: SmartHive,
+    name: "SmartHive- DAO for Housing Societies",
+    category: "blockchain",
+    href: "https://smarthive-13f36.web.app/",
+  },
+  {
+    id: "4",
     image: DEX,
     name: "Decentralised Exchange",
     category: "blockchain",
     href: "http://dex-demo.vercel.app/",
   },
   {
-    id: "4",
+    id: "5",
     image: InvoiceManager,
     name: "Invoice Manager",
     category: "blockchain",
     href: "http://invoice-manager-red.vercel.app/",
   },
   {
-    id: "5",
+    id: "6",
     image: MdownBlog,
     name: "Blogging In Mark-Down",
     category: "web development",
     href: "https://github.com/dixitt5/Markdown-Blog-Project",
   },
   {
-    id: "6",
+    id: "7",
     image: NFTCollection,
-    name: "Mint a NFT",
+    name: "Mint an NFT",
     category: "blockchain",
     href: "https://nft-collection-dixitt5.vercel.app/",
   },
   {
-    id: "7",
+    id: "8",
     image: ICO,
     name: "Initial Coin Offering",
     category: "blockchain",
@@ -230,6 +230,21 @@ export const skills = [
   {
     image: SkillImg13,
   },
+  {
+    image: SkillImg14,
+  },
+  {
+    image: SkillImg15,
+  },
+  {
+    image: SkillImg16,
+  },
+  {
+    image: SkillImg17,
+  },
+  {
+    image: SkillImg18,
+  },
 ];
 
 // services
@@ -248,7 +263,7 @@ export const services = [
   },
   {
     icon: <FiDollarSign />,
-    
+
     name: "De-Fi",
     description:
       "DeFi (Decentralized Finance) is a set of blockchain-based financial applications that operate on a decentralized, open-source, and permissionless network.",
