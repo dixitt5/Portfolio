@@ -36,8 +36,8 @@ function Hero() {
               Mint NFT
             </button> */}
             {/* <WalletComp/> */}
-            <ConnectButton/>
-            <SendEth/>
+            {/* <ConnectButton/>
+            <SendEth/> */}
           </div>
           <div className="hidden lg:flex flex-1 justify-end items-end h-[800px]">
             <img className="h-[800px]" src={photo} alt="" />
