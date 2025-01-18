@@ -17,10 +17,9 @@ const Footer = () => {
             })}
           </div>
           <div className="h-full">
-            {/* <img className="h-[150px]" src={Logo} alt="" /> */}
             <p className="text-white">Dixit Tilaji</p>
           </div>
-          <p>&copy; 2023 Dixit Tilaji. All rights reserved.</p>
+          <p>&copy; 2025 Dixit Tilaji. All rights reserved.</p>
         </div>
       </div>
     </footer>
