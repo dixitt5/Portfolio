@@ -81,7 +81,7 @@ export const social = [
   },
   {
     icon: <FiTwitter />,
-    href: "https://twitter.com/dixit_tilaji",
+    href: "https://twitter.com/boldixit",
   },
   {
     icon: <FiLinkedin />,
@@ -312,7 +312,7 @@ export const contact = [
   {
     icon: <FiMapPin />,
     title: "Current Location",
-    subtitle: "Ahmedabad, Gujarat, India.",
+    subtitle: "Surat, Gujarat, India.",
     description: "Living the Fullest.",
   },
 ];
