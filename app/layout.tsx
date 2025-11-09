@@ -19,14 +19,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Portfolio | Your Name",
+    default: "Portfolio | Dixit Tilaji",
     template: "%s | Portfolio",
   },
   description:
     "Full-stack developer portfolio featuring blog posts, projects, and interactive games.",
   keywords: ["portfolio", "developer", "blog", "projects", "web development"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  authors: [{ name: "Dixit Tilaji" }],
+  creator: "Dixit Tilaji",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
   ),
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Portfolio | Your Name",
+    title: "Portfolio | Dixit Tilaji",
     description:
       "Full-stack developer portfolio featuring blog posts, projects, and interactive games.",
     siteName: "Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Your Name",
+    title: "Portfolio | Dixit Tilaji",
     description:
       "Full-stack developer portfolio featuring blog posts, projects, and interactive games.",
     creator: "@yourusername",

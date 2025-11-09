@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-32">
-      <h1 className="text-4xl font-bold mb-4">Your Name</h1>
+      <h1 className="text-4xl font-bold mb-4">Dixit Tilaji</h1>
       <p
         className="text-lg mb-12"
         style={{ color: "hsl(var(--muted-foreground))" }}

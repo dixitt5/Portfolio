@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { STRING_CONSTANTS } from "@/utils/constants";
 
 export const metadata: Metadata = {
   title: "Games",
@@ -9,9 +10,7 @@ export default function GamesPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
       <h1 className="text-3xl font-bold mb-6">Games</h1>
-      <p style={{ color: "hsl(var(--muted-foreground))" }}>
-        Coming soon. Interactive mini-games with leaderboards.
-      </p>
+      <p style={{ color: "hsl(var(--muted-foreground))" }}>{STRING_CONSTANTS.STILL_WORKING}</p>
     </div>
   );
 }
