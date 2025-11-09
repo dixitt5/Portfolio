@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
+import { SunIcon, MoonIcon } from "./icons";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -18,12 +19,10 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="text-sm hover:underline"
+      className="text-sm hover:opacity-70 transition-opacity cursor-pointer text-muted-foreground"
       aria-label="Toggle theme"
-      style={{ color: "hsl(var(--muted-foreground))" }}
     >
-      {theme === "dark" ? "Light" : "Dark"}
+      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
     </button>
   );
 }
-

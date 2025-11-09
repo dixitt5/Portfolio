@@ -19,20 +19,22 @@ export function Nav() {
       <div className="max-w-3xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="font-medium hover:underline">
-            Your Name
+            Dixit Tilaji
           </Link>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex gap-6">
               {navigation.map((item) => {
-                const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
+                const isActive =
+                  pathname === item.href ||
+                  pathname?.startsWith(item.href + "/");
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-sm hover:underline ${
-                      isActive ? "" : ""
-                    }`}
-                    style={isActive ? {} : { color: "hsl(var(--muted-foreground))" }}
+                    className={`text-sm hover:underline`}
+                    style={
+                      isActive ? {} : { color: "hsl(var(--muted-foreground))" }
+                    }
                   >
                     {item.name}
                   </Link>
@@ -46,4 +48,3 @@ export function Nav() {
     </nav>
   );
 }
-
