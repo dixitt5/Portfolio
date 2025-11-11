@@ -65,9 +65,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased flex flex-col min-h-screen`}
+        className={`font-sans flex flex-col min-h-screen prose-ui antialiased`}
       >
         <ThemeProvider
           attribute="class"

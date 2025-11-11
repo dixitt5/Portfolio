@@ -1,7 +1,15 @@
-import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
+import { NextConfig } from "next";
+import { remarkPlugins } from "@prose-ui/core";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig : NextConfig = {
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: remarkPlugins(),
+  }
+});
+
+export default withMDX(nextConfig);
