@@ -8,13 +8,14 @@ export default function Home() {
         className="text-lg mb-12"
         style={{ color: "hsl(var(--muted-foreground))" }}
       >
-        Full-stack developer. Building minimal, functional web applications.
+        Software Craftsperson at Incubyte. Building scalable web applications
+        with React, Next.js, and Node.js.
       </p>
 
       <div className="space-y-12">
         <section>
           <h2
-            className="text-sm uppercase tracking-wider mb-4"
+            className="text-xl tracking-wider mb-4"
             style={{ color: "hsl(var(--muted-foreground))" }}
           >
             Navigation
@@ -37,20 +38,20 @@ export default function Home() {
 
         <section>
           <h2
-            className="text-sm uppercase tracking-wider mb-4"
+            className="text-xl tracking-wider mb-4"
             style={{ color: "hsl(var(--muted-foreground))" }}
           >
             Contact
           </h2>
           <div className="space-y-2">
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:tilajidixit@gmail.com"
               className="block hover:underline"
             >
               Email
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/dixitt5"
               target="_blank"
               rel="noopener noreferrer"
               className="block hover:underline"
@@ -58,12 +59,20 @@ export default function Home() {
               GitHub
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="https://www.linkedin.com/in/dixit5/"
               target="_blank"
               rel="noopener noreferrer"
               className="block hover:underline"
             >
-              Twitter
+              LinkedIn
+            </a>
+            <a
+              href="https://medium.com/@tilajidixit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:underline"
+            >
+              Medium
             </a>
           </div>
         </section>
