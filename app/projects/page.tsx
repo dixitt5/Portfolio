@@ -8,45 +8,27 @@ export const metadata: Metadata = {
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Full-featured e-commerce platform with cart, checkout, and admin dashboard.",
+    title: "QuickCue",
+    description: "Chrome extension for efficient video navigation using Motion API and Web APIs. Available on Chrome Web Store.",
+    tech: "Motion, Web APIs, ShadCn",
     year: "2024",
-    link: "https://github.com/yourusername/ecommerce",
+    link: "https://chromewebstore.google.com/detail/Quick%20Cue/pcdhefoofnagnpdmlepnlgkbmgapfijl",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates.",
-    year: "2023",
-    link: "https://github.com/yourusername/task-manager",
+    title: "Globetrotter",
+    description: "AI-powered personalized travel planning application. Winner of Odoo Hackathon '25 (₹1,00,000 prize).",
+    tech: "ReactJS, AI personalization",
+    year: "2025",
+    link: "https://github.com/dixitt5/GlobeTrotter",
   },
   {
     id: 3,
-    title: "Blog Platform",
-    description: "Modern blogging platform with MDX support and analytics.",
-    year: "2023",
-    link: "https://github.com/yourusername/blog",
-  },
-  {
-    id: 4,
-    title: "Weather Dashboard",
-    description: "Real-time weather dashboard with forecasts and historical data.",
-    year: "2022",
-    link: "https://github.com/yourusername/weather",
-  },
-  {
-    id: 5,
-    title: "Portfolio Generator",
-    description: "Tool to generate customizable portfolio websites from templates.",
-    year: "2022",
-    link: "https://github.com/yourusername/portfolio-gen",
-  },
-  {
-    id: 6,
-    title: "API Monitoring Tool",
-    description: "Monitor and analyze API performance with detailed metrics.",
-    year: "2021",
-    link: "https://github.com/yourusername/api-monitor",
+    title: "SmartHive",
+    description: "Blockchain-based decentralized application with 3D visualization. 2nd place in Hack-NU-Thon 4.0.",
+    tech: "Solidity, Truffle, ReactJS, web3.js, Quicknode, Three.js",
+    year: "2024",
+    link: "https://devfolio.co/projects/smarthive-d43a",
   },
 ];
 
@@ -64,8 +46,11 @@ export default function ProjectsPage() {
                 {project.year}
               </span>
             </div>
-            <p className="mb-4" style={{ color: "hsl(var(--muted-foreground))" }}>
+            <p className="mb-2" style={{ color: "hsl(var(--muted-foreground))" }}>
               {project.description}
+            </p>
+            <p className="text-sm mb-4" style={{ color: "hsl(var(--muted-foreground))" }}>
+              <span className="font-medium">Tech:</span> {project.tech}
             </p>
             <a
               href={project.link}
@@ -73,7 +58,7 @@ export default function ProjectsPage() {
               rel="noopener noreferrer"
               className="text-sm hover:underline"
             >
-              View on GitHub →
+              View Project →
             </a>
           </article>
         ))}
