@@ -16,7 +16,7 @@ export function Nav() {
 
   return (
     <nav className="border-b" style={{ borderColor: "hsl(var(--border))" }}>
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="font-medium hover:underline">
             Dixit Tilaji
@@ -31,7 +31,7 @@ export function Nav() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-sm hover:underline`}
+                    className="text-sm hover:underline"
                     style={
                       isActive ? {} : { color: "hsl(var(--muted-foreground))" }
                     }
