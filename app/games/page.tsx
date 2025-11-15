@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function GamesPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div className="max-w-5xl mx-auto px-6 py-16">
       <h1 className="text-3xl font-bold mb-6">Games</h1>
       <p style={{ color: "hsl(var(--muted-foreground))" }}>{STRING_CONSTANTS.STILL_WORKING}</p>
     </div>
