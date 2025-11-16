@@ -4,7 +4,7 @@ export function Footer() {
       className="border-t mt-auto"
       style={{ borderColor: "hsl(var(--border))" }}
     >
-      <div className="max-w-6xl mx-auto px-6 py-8">
+      <div className="max-w-6xl mx-auto text-center">
         <p
           className="text-sm"
           style={{ color: "hsl(var(--muted-foreground))" }}

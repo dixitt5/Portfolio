@@ -1,81 +1,63 @@
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-32">
-      <h1 className="text-4xl font-bold mb-4">Dixit Tilaji</h1>
-      <p
-        className="text-lg mb-12"
-        style={{ color: "hsl(var(--muted-foreground))" }}
-      >
-        Software Craftsperson at Incubyte. Building scalable web applications
-        with React, Next.js, and Node.js.
-      </p>
-
-      <div className="space-y-12">
-        <section>
-          <h2
-            className="text-xl tracking-wider mb-4"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Navigation
-          </h2>
-          <div className="space-y-2">
-            <Link href="/about" className="block hover:underline">
-              About
-            </Link>
-            <Link href="/projects" className="block hover:underline">
-              Projects
-            </Link>
-            <Link href="/blog" className="block hover:underline">
-              Blog
-            </Link>
-            <Link href="/games" className="block hover:underline">
-              Games
-            </Link>
+    <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-6 py-8">
+      <div className="max-w-6xl w-full">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-[90vw] md:max-w-full mx-auto">
+          <div className="order-2 md:order-1 space-y-8 md:pr-8">
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                Dixit Tilaji
+              </h1>
+              <p
+                className="text-lg md:text-xl"
+                style={{ color: "hsl(var(--muted-foreground))" }}
+              >
+                Thinker. Builder.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-8">
+              <Link
+                href="/about"
+                className="group relative inline-flex items-center gap-1.5 text-lg font-medium pb-1"
+              >
+                <span>About Me</span>
+                <ArrowUpRight
+                  className="w-4 h-4 transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  strokeWidth={2.5}
+                />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 ease-out group-hover:w-full"></span>
+              </Link>
+              <Link
+                href="/projects"
+                className="group relative inline-flex items-center gap-1.5 text-lg font-medium pb-1"
+              >
+                <span>View Projects</span>
+                <ArrowUpRight
+                  className="w-4 h-4 transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  strokeWidth={2.5}
+                />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 ease-out group-hover:w-full"></span>
+              </Link>
+            </div>
           </div>
-        </section>
 
-        <section>
-          <h2
-            className="text-xl tracking-wider mb-4"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Contact
-          </h2>
-          <div className="space-y-2">
-            <a
-              href="mailto:tilajidixit@gmail.com"
-              className="block hover:underline"
-            >
-              Email
-            </a>
-            <a
-              href="https://github.com/dixitt5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:underline"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dixit5/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:underline"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://medium.com/@tilajidixit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:underline"
-            >
-              Medium
-            </a>
+          <div className="order-1 md:order-2 flex items-center justify-center">
+            <div className="relative w-full aspect-square max-w-[400px] md:max-w-[450px]">
+              <Image
+                src="/hero-illustration.svg"
+                alt="Illustration of person sitting on mountain peak"
+                fill
+                priority
+                className="object-contain transition-all duration-300 dark:brightness-0 dark:invert"
+                sizes="(max-width: 768px) 90vw, 450px"
+              />
+            </div>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );
