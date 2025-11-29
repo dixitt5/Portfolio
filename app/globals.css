@@ -4,19 +4,27 @@
 @import "@prose-ui/next/katex.min.css";
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  --background: 0 0% 98%;
+  --foreground: 0 0% 9%;
   --muted-foreground: 0 0% 40%;
-  --border: 0 0% 90%;
+  --border: 0 0% 80%;
   --hover: 0 0% 95%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+  --muted: 0 0% 96%;
+  --accent: 0 0% 95%;
 }
 
 .dark {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
   --muted-foreground: 0 0% 60%;
-  --border: 0 0% 20%;
-  --hover: 0 0% 10%;
+  --border: 0 0% 25%;
+  --hover: 0 0% 12%;
+  --card: 0 0% 8%;
+  --card-foreground: 0 0% 98%;
+  --muted: 0 0% 14%;
+  --accent: 0 0% 12%;
 }
 
 * {
@@ -34,4 +42,9 @@ pre,
 kbd,
 samp {
   font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+::selection {
+  background-color: hsl(var(--foreground));
+  color: hsl(var(--background));
 }
