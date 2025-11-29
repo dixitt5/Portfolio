@@ -8,56 +8,12 @@ import {
   education,
   contact,
 } from "@/utils/about-data";
+import { BentoCard, SectionTitle, TechChip } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "About",
   description: "Learn more about me, my experience, and what I do.",
 };
-
-function BentoCard({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`border p-6 md:p-8 h-full ${className}`}
-      style={{
-        backgroundColor: "hsl(var(--card))",
-        borderColor: "hsl(var(--border))",
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="text-sm font-bold uppercase tracking-wider mb-6 block"
-      style={{ color: "hsl(var(--muted-foreground))" }}
-    >
-      {children}
-    </span>
-  );
-}
-
-function SkillChip({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="px-2.5 py-1 text-xs font-medium font-mono border rounded-sm"
-      style={{
-        backgroundColor: "hsl(var(--accent))",
-        borderColor: "hsl(var(--border))",
-      }}
-    >
-      {children}
-    </span>
-  );
-}
 
 export default function AboutPage() {
   return (
@@ -165,10 +121,10 @@ export default function AboutPage() {
             <SectionTitle>Core Technologies</SectionTitle>
             <div className="flex flex-wrap gap-2">
               {skills.languages.map((skill) => (
-                <SkillChip key={skill}>{skill}</SkillChip>
+                <TechChip key={skill}>{skill}</TechChip>
               ))}
               {skills.frameworks.map((skill) => (
-                <SkillChip key={skill}>{skill}</SkillChip>
+                <TechChip key={skill}>{skill}</TechChip>
               ))}
             </div>
           </BentoCard>
