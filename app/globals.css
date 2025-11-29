@@ -44,7 +44,13 @@ samp {
   font-family: var(--font-mono), ui-monospace, monospace;
 }
 
+/* Selection styling for the brutalist aesthetic */
 ::selection {
   background-color: hsl(var(--foreground));
   color: hsl(var(--background));
+}
+
+/* Project card hover border effect */
+.hover\:border-foreground:hover {
+  border-color: hsl(var(--foreground)) !important;
 }

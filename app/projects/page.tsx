@@ -1,82 +1,97 @@
 import { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
+import { projects } from "@/utils/projects-data";
+import { PageHeader, TechChip, Badge } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Projects",
   description: "Explore my portfolio of web development projects.",
 };
 
-const projects = [
-  {
-    id: 1,
-    title: "QuickCue",
-    description:
-      "Chrome extension for efficient video navigation using Motion API and Web APIs. Available on Chrome Web Store.",
-    tech: "Motion, Web APIs, ShadCn",
-    year: "2024",
-    link: "https://chromewebstore.google.com/detail/Quick%20Cue/pcdhefoofnagnpdmlepnlgkbmgapfijl",
-  },
-  {
-    id: 2,
-    title: "Globetrotter",
-    description:
-      "AI-powered personalized travel planning application. Winner of Odoo Hackathon '25 (₹1,00,000 prize).",
-    tech: "ReactJS, AI personalization",
-    year: "2025",
-    link: "https://github.com/dixitt5/GlobeTrotter",
-  },
-  {
-    id: 3,
-    title: "SmartHive",
-    description:
-      "Blockchain-based decentralized application with 3D visualization. 2nd place in Hack-NU-Thon 4.0.",
-    tech: "Solidity, Truffle, ReactJS, web3.js, Quicknode, Three.js",
-    year: "2024",
-    link: "https://devfolio.co/projects/smarthive-d43a",
-  },
-];
+function ProjectCard({
+  project,
+  index,
+  featured = false,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+  featured?: boolean;
+}) {
+  return (
+    <div
+      className={`group relative flex flex-col justify-between border p-8 h-full transition-colors duration-300 hover:border-foreground ${
+        featured ? "md:col-span-2" : ""
+      }`}
+      style={{
+        backgroundColor: "hsl(var(--card))",
+        borderColor: "hsl(var(--border))",
+      }}
+    >
+      {/* Header: Number/Year + Arrow */}
+      <div className="flex justify-between items-start mb-6">
+        <span
+          className="font-mono text-sm"
+          style={{ color: "hsl(var(--muted-foreground))" }}
+        >
+          {String(index + 1).padStart(2, "0")} / {project.year}
+        </span>
+        <ArrowRight
+          className="w-6 h-6 transition-all duration-300 group-hover:-rotate-45"
+          style={{ color: "hsl(var(--muted-foreground))" }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className={`mb-8 ${featured ? "max-w-2xl" : ""}`}>
+        <div className="flex items-center gap-3 mb-3">
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:underline decoration-2 underline-offset-4">
+            {project.title}
+          </h3>
+          {project.badge && (
+            <Badge variant={project.badge.variant}>{project.badge.text}</Badge>
+          )}
+        </div>
+        <p
+          style={{ color: "hsl(var(--muted-foreground))" }}
+          className={`leading-relaxed ${featured ? "max-w-2xl" : ""}`}
+        >
+          {project.description}
+        </p>
+      </div>
+
+      {/* Tech Stack */}
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {project.tech.map((tech) => (
+          <TechChip key={tech}>{tech}</TechChip>
+        ))}
+      </div>
+
+      {/* Full Card Hit Area */}
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 z-10"
+        aria-label={`View ${project.title} Project`}
+      />
+    </div>
+  );
+}
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-bold mb-12">Projects</h1>
+    <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
+      <PageHeader title="Projects." itemCount={projects.length} />
 
-      <div className="space-y-12">
-        {projects.map((project) => (
-          <article
+      {/* 2-Column Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {projects.map((project, index) => (
+          <ProjectCard
             key={project.id}
-            className="border-b pb-12"
-            style={{ borderColor: "hsl(var(--border))" }}
-          >
-            <div className="flex justify-between items-start mb-2">
-              <h2 className="text-xl font-medium">{project.title}</h2>
-              <span
-                className="text-sm"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                {project.year}
-              </span>
-            </div>
-            <p
-              className="mb-2"
-              style={{ color: "hsl(var(--muted-foreground))" }}
-            >
-              {project.description}
-            </p>
-            <p
-              className="text-sm mb-4"
-              style={{ color: "hsl(var(--muted-foreground))" }}
-            >
-              <span className="font-medium">Tech:</span> {project.tech}
-            </p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm hover:underline"
-            >
-              View Project →
-            </a>
-          </article>
+            project={project}
+            index={index}
+            featured={project.featured}
+          />
         ))}
       </div>
     </div>
