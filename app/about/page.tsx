@@ -1,376 +1,311 @@
 import { Metadata } from "next";
-import { Trophy, Medal, DollarSign, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  skills,
+  achievements,
+  openSourceContributions,
+  experience,
+  education,
+  contact,
+} from "@/utils/about-data";
 
 export const metadata: Metadata = {
   title: "About",
   description: "Learn more about me, my experience, and what I do.",
 };
 
+function BentoCard({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`border p-6 md:p-8 h-full ${className}`}
+      style={{
+        backgroundColor: "hsl(var(--card))",
+        borderColor: "hsl(var(--border))",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className="text-sm font-bold uppercase tracking-wider mb-6 block"
+      style={{ color: "hsl(var(--muted-foreground))" }}
+    >
+      {children}
+    </span>
+  );
+}
+
+function SkillChip({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className="px-2.5 py-1 text-xs font-medium font-mono border rounded-sm"
+      style={{
+        backgroundColor: "hsl(var(--accent))",
+        borderColor: "hsl(var(--border))",
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
 export default function AboutPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-bold mb-12">About</h1>
+    <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
+      {/* Header */}
+      <header className="mb-12 md:mb-20">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase mb-4">
+          About Me.
+        </h1>
+        <p
+          className="text-xl md:text-2xl font-medium tracking-tight"
+          style={{ color: "hsl(var(--muted-foreground))" }}
+        >
+          Software Craftsperson specializing in scalable web applications.
+        </p>
+      </header>
 
-      <div className="space-y-12">
-        <section>
-          <p className="mb-4">
-            I&apos;m a Software Craftsperson at Incubyte, leading
-            cross-functional teams and building scalable web applications using
-            modern technologies.
-          </p>
-          <p style={{ color: "hsl(var(--muted-foreground))" }}>
-            With expertise in React, Next.js, Node.js, and AWS, I focus on
-            delivering high-quality, performant solutions. I&apos;m passionate
-            about clean code, test-driven development, and creating seamless
-            user experiences.
-          </p>
-        </section>
+      {/* Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-start">
+        {/* Row 1: Bio (8 cols) + Contact (4 cols) */}
+        <div className="col-span-1 md:col-span-8">
+          <BentoCard>
+            <p className="text-xl md:text-2xl font-medium leading-relaxed tracking-tight">
+              I craft robust software solutions with a focus on clean code,
+              test-driven development, and seamless user experiences. Currently
+              working in cross-functional teams and building scalable applications
+              using React, Next.js, Node.js, NestJS, and AWS.
+            </p>
+            <p
+              className="text-lg md:text-xl mt-6 leading-relaxed"
+              style={{ color: "hsl(var(--muted-foreground))" }}
+            >
+              I believe every code written should tell a story.
+            </p>
+          </BentoCard>
+        </div>
 
-        <section>
-          <h2
-            className="text-xl tracking-wider mb-6"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Achievements
-          </h2>
-          
-          <div className="space-y-8">
+        <div className="col-span-1 md:col-span-4">
+          <BentoCard className="flex flex-col justify-between">
             <div>
-              <h3 className="font-medium mb-4 text-lg">Hackathon Wins</h3>
-              <ul
-                className="text-sm space-y-3 list-none"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                <li className="flex items-start gap-3">
-                  <Trophy className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="font-medium" style={{ color: "hsl(var(--foreground))" }}>
-                      Winner, Odoo Hackathon &apos;25
-                    </span>
-                    {" — "}
-                    <span>Globetrotter (₹1,00,000 prize)</span>
-                  </div>
+              <SectionTitle>Connect</SectionTitle>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href={contact.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-bold hover:underline flex items-center group"
+                  >
+                    GitHub
+                    <ArrowRight
+                      className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    />
+                  </a>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Trophy className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="font-medium" style={{ color: "hsl(var(--foreground))" }}>
-                      Winner, Azadi ka Amrut Mohatsav Hackathon 2022
-                    </span>
-                    {" — "}
-                    <span>Parivartan (₹30,000 among 2000+ teams)</span>
-                  </div>
+                <li>
+                  <a
+                    href={contact.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-bold hover:underline flex items-center group"
+                  >
+                    LinkedIn
+                    <ArrowRight
+                      className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    />
+                  </a>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Medal className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="font-medium" style={{ color: "hsl(var(--foreground))" }}>
-                      2nd place in Hack-NU-Thon 4.0
-                    </span>
-                    {" — "}
-                    <span>SmartHive</span>
-                  </div>
+                <li>
+                  <a
+                    href={contact.medium}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-bold hover:underline flex items-center group"
+                  >
+                    Medium
+                    <ArrowRight
+                      className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    />
+                  </a>
                 </li>
-                <li className="flex items-start gap-3">
-                  <DollarSign className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="font-medium" style={{ color: "hsl(var(--foreground))" }}>
-                      Secured SSIP 2.0 funding
-                    </span>
-                    {" — "}
-                    <span>₹88,250 for Parivartan</span>
-                  </div>
+                <li>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="text-lg font-bold hover:underline flex items-center group"
+                  >
+                    Email
+                    <ArrowRight
+                      className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    />
+                  </a>
                 </li>
               </ul>
             </div>
+          </BentoCard>
+        </div>
 
-            <div>
-              <h3 className="font-medium mb-4 text-lg">Open Source Contributions</h3>
-              <div className="space-y-4">
-                <div className="text-sm mb-4" style={{ color: "hsl(var(--muted-foreground))" }}>
-                  Earned $4,500 in open-source bounties
+        {/* Row 2: Skills (Full Width) */}
+        <div className="col-span-1 md:col-span-12">
+          <BentoCard>
+            <SectionTitle>Core Technologies</SectionTitle>
+            <div className="flex flex-wrap gap-2">
+              {skills.languages.map((skill) => (
+                <SkillChip key={skill}>{skill}</SkillChip>
+              ))}
+              {skills.frameworks.map((skill) => (
+                <SkillChip key={skill}>{skill}</SkillChip>
+              ))}
+            </div>
+          </BentoCard>
+        </div>
+
+        {/* Row 3: Achievements (6 cols) + Open Source (6 cols) */}
+        <div className="col-span-1 md:col-span-6">
+          <BentoCard>
+            <SectionTitle>Achievements</SectionTitle>
+            <ul className="space-y-6">
+              {achievements.map((achievement, index) => (
+                <li key={index}>
+                  <h3 className="text-lg font-bold mb-1">{achievement.title}</h3>
+                  <p style={{ color: "hsl(var(--muted-foreground))" }}>
+                    {achievement.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </BentoCard>
+        </div>
+
+        <div className="col-span-1 md:col-span-6">
+          <BentoCard>
+            <SectionTitle>Open Source</SectionTitle>
+            <p
+              className="text-sm mb-6"
+              style={{ color: "hsl(var(--muted-foreground))" }}
+            >
+              $4,500+ earned through open-source bounties
+            </p>
+            <ul className="space-y-6">
+              {openSourceContributions.map((contribution, index) => (
+                <li key={index}>
+                  <h3 className="text-lg font-bold mb-1">
+                    {contribution.project}
+                  </h3>
+                  <p
+                    className="text-sm mb-2"
+                    style={{ color: "hsl(var(--muted-foreground))" }}
+                  >
+                    {contribution.description}
+                  </p>
+                  <div className="space-y-1">
+                    {contribution.prs.map((pr, prIndex) => (
+                      <a
+                        key={prIndex}
+                        href={pr.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm py-1 group"
+                      >
+                        <CheckCircle2 
+                                        className="w-4 h-4 flex-shrink-0 transition-colors"
+                                        style={{ color: "hsl(var(--muted-foreground))" }}
+                                      />
+                        <span className="group-hover:underline">{pr.title}</span>
+                      </a>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </BentoCard>
+        </div>
+
+        {/* Row 4: Experience (9 cols) + Education (3 cols) */}
+        <div className="col-span-1 md:col-span-9">
+          <BentoCard>
+            <SectionTitle>Experience</SectionTitle>
+            <div className="space-y-10">
+              {experience.map((job, index) => (
+                <div
+                  key={index}
+                  className="grid grid-cols-1 md:grid-cols-4 gap-4"
+                >
+                  <div className="md:col-span-1">
+                    <p
+                      className="text-sm font-semibold uppercase tracking-wider"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    >
+                      {job.period}
+                    </p>
+                  </div>
+                  <div className="md:col-span-3 relative">
+                    <div
+                      className="hidden md:block absolute -left-4 top-1 bottom-0 w-px"
+                      style={{ backgroundColor: "hsl(var(--border))" }}
+                    />
+                    <h3 className="text-xl font-bold mb-1">{job.title}</h3>
+                    <p
+                      className="text-lg font-medium mb-2"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    >
+                      {job.company}
+                    </p>
+                    <ul
+                      className="list-disc list-outside ml-4 space-y-1.5 leading-relaxed"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    >
+                      {job.highlights.map((highlight, hIndex) => (
+                        <li key={hIndex}>{highlight}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="border rounded-lg p-4" style={{ borderColor: "hsl(var(--border))" }}>
-                    <div className="mb-3">
-                      <h4 className="font-medium mb-1" style={{ color: "hsl(var(--foreground))" }}>
-                        LlamaIndex
-                      </h4>
-                      <p className="text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
-                        Multiple merged PRs contributing to the LlamaIndex ecosystem
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm py-1.5 px-2 rounded hover:bg-accent transition-colors group"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="flex-1" style={{ color: "hsl(var(--foreground))" }}>
-                          PR Title/Description
-                        </span>
-                        <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                      </a>
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm py-1.5 px-2 rounded hover:bg-accent transition-colors group"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="flex-1" style={{ color: "hsl(var(--foreground))" }}>
-                          Another PR Title/Description
-                        </span>
-                        <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="border rounded-lg p-4" style={{ borderColor: "hsl(var(--border))" }}>
-                    <div className="mb-3">
-                      <h4 className="font-medium mb-1" style={{ color: "hsl(var(--foreground))" }}>
-                        Helper
-                      </h4>
-                      <p className="text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
-                        Contributions to Helper project
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm py-1.5 px-2 rounded hover:bg-accent transition-colors group"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="flex-1" style={{ color: "hsl(var(--foreground))" }}>
-                          PR Title/Description
-                        </span>
-                        <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-          </div>
-        </section>
+          </BentoCard>
+        </div>
 
-        <section>
-          <h2
-            className="text-xl tracking-wider mb-6"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Experience
-          </h2>
-          <div className="space-y-8">
+        <div className="col-span-1 md:col-span-3">
+          <BentoCard>
+            <SectionTitle>Education</SectionTitle>
             <div>
-              <h3 className="font-medium mb-1">Software Craftsperson</h3>
+              <h3 className="text-lg font-bold mb-1">{education.degree}</h3>
               <p
-                className="text-sm mb-2"
+                className="mb-1"
                 style={{ color: "hsl(var(--muted-foreground))" }}
               >
-                Incubyte · Jul 2024 - Present (Remote)
+                {education.institution}
               </p>
-              <ul
-                className="text-sm space-y-1 list-disc list-inside"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                <li>
-                  Leading a cross-functional team for a US-based client using
-                  Express.js, React, and Next.js
-                </li>
-                <li>
-                  Integrated in-house AI product with client requirements for
-                  seamless adoption
-                </li>
-                <li>
-                  Maintained AWS-based infrastructure for scalable deployments
-                </li>
-                <li>
-                  Developed reusable components and optimized backend workflows
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium mb-1">Software Craftsperson Intern</h3>
               <p
-                className="text-sm mb-2"
+                className="text-sm mb-4"
                 style={{ color: "hsl(var(--muted-foreground))" }}
               >
-                Incubyte · Jan 2024 - Jul 2024 (Remote)
+                {education.period}
               </p>
-              <ul
-                className="text-sm space-y-1 list-disc list-inside"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                <li>Enhanced UI/UX using ChakraUI, Next.js, and NestJS</li>
-                <li>Built RAG app powered by GPT for document queries</li>
-                <li>Created Zapier automation for workflow efficiency</li>
-                <li>
-                  Developed identity resolution app using FullContact APIs
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium mb-1">Software Developer Intern</h3>
-              <p
-                className="text-sm mb-2"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                HypeScan · Aug 2023 - Jan 2024 (Remote)
-              </p>
-              <ul
-                className="text-sm space-y-1 list-disc list-inside"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                <li>
-                  Architected Firebase solutions including Cloud Functions
-                </li>
-                <li>Led frontend initiatives for improved UX</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium mb-1">
-                Blockchain & Backend Developer Intern
-              </h3>
-              <p
-                className="text-sm mb-2"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                SkyHi · Jul 2023 - Aug 2023 (Remote)
-              </p>
-              <ul
-                className="text-sm space-y-1 list-disc list-inside"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                <li>Developed blockchain product and smart contracts</li>
-                <li>
-                  Implemented Firebase database for off-chain data management
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium mb-1">Software Developer Intern</h3>
-              <p
-                className="text-sm mb-2"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                Authentical · Feb 2023 - Jun 2023 (Remote)
-              </p>
-              <ul
-                className="text-sm space-y-1 list-disc list-inside"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                <li>
-                  Built certificate creation system with web3.js on Mumbai
-                  testnet
-                </li>
-                <li>
-                  Designed certificate UI with EmailJS-based notifications
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2
-            className="text-xl tracking-wider mb-6"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Skills
-          </h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-medium mb-2">Languages</h3>
               <p
                 className="text-sm"
                 style={{ color: "hsl(var(--muted-foreground))" }}
               >
-                TypeScript, JavaScript, C++, C, Solidity
+                CGPA: {education.cgpa}
               </p>
             </div>
-            <div>
-              <h3 className="font-medium mb-2">Frameworks & Tools</h3>
-              <p
-                className="text-sm"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                React, Next.js, Node.js, NestJS, Jest, Vitest, Express,
-                Firebase, AWS, TailwindCSS, Langchain
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2
-            className="text-xl tracking-wider mb-6"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Education
-          </h2>
-          <div>
-            <h3 className="font-medium mb-1">Bachelor of Engineering (IT)</h3>
-            <p
-              className="text-sm mb-2"
-              style={{ color: "hsl(var(--muted-foreground))" }}
-            >
-              L.D College Of Engineering, Ahmedabad · June 2020 - June 2024
-            </p>
-            <p
-              className="text-sm"
-              style={{ color: "hsl(var(--muted-foreground))" }}
-            >
-              CGPA: 8.34 · Coursework: Data Structures, Algorithms, OOP, DBMS,
-              Software Engineering
-            </p>
-          </div>
-        </section>
-
-        <section>
-          <h2
-            className="text-xl tracking-wider mb-6"
-            style={{ color: "hsl(var(--muted-foreground))" }}
-          >
-            Contact
-          </h2>
-          <div className="space-y-2">
-            <a
-              href="mailto:tilajidixit@gmail.com"
-              className="block hover:underline"
-            >
-              tilajidixit@gmail.com
-            </a>
-            <a
-              href="https://github.com/dixitt5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:underline"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dixit5/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:underline"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://medium.com/@tilajidixit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:underline"
-            >
-              Medium
-            </a>
-          </div>
-        </section>
+          </BentoCard>
+        </div>
       </div>
     </div>
   );
