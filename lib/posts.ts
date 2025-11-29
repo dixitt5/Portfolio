@@ -5,6 +5,7 @@ export interface Post {
   date: string;
   tags: string[];
   author?: string;
+  readingTime?: string;
 }
 
 export const posts: Post[] = [
@@ -16,6 +17,7 @@ export const posts: Post[] = [
     date: "2024-11-09",
     tags: ["web development", "react", "nextjs", "tutorial"],
     author: "Dixit Tilaji",
+    readingTime: "5 min read",
   },
 ];
 

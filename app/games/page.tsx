@@ -8,9 +8,11 @@ export const metadata: Metadata = {
 
 export default function GamesPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
       <h1 className="text-3xl font-bold mb-6">Games</h1>
-      <p style={{ color: "hsl(var(--muted-foreground))" }}>{STRING_CONSTANTS.STILL_WORKING}</p>
+      <p style={{ color: "hsl(var(--muted-foreground))" }}>
+        {STRING_CONSTANTS.STILL_WORKING}
+      </p>
     </div>
   );
 }

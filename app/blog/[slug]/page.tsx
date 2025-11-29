@@ -48,7 +48,7 @@ export default async function BlogPost({ params }: Props) {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
       <article className="max-w-none">
         <MDXContent />
       </article>
