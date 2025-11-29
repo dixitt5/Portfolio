@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import HeroIllustration from "@/public/hero-illustration.svg";
 
 export default function Home() {
   return (
@@ -46,15 +46,11 @@ export default function Home() {
           </div>
 
           <div className="order-1 md:order-2 flex items-center justify-center">
-            <div className="relative w-full aspect-square max-w-[400px] md:max-w-[450px]">
-              <Image
-                src="/hero-illustration.svg"
-                alt="Illustration of person sitting on mountain peak"
-                fill
-                priority
-                className="object-contain transition-all duration-300 dark:brightness-0 dark:invert"
-                sizes="(max-width: 768px) 90vw, 450px"
-              />
+            <div
+              className="relative w-full aspect-square max-w-[400px] md:max-w-[450px]"
+              style={{ color: "hsl(var(--foreground))" }}
+            >
+              <HeroIllustration className="w-full h-full transition-all duration-300" />
             </div>
           </div>
         </div>
