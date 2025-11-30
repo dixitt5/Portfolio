@@ -38,10 +38,11 @@ export function SectionTitle({ children }: { children: ReactNode }) {
 export function TechChip({ children }: { children: ReactNode }) {
   return (
     <span
-      className="px-2.5 py-1 text-xs font-medium font-mono border rounded-sm uppercase"
+      className="px-2 py-1 text-xs font-medium font-mono border uppercase"
       style={{
-        backgroundColor: "hsl(var(--accent))",
-        borderColor: "hsl(var(--border))",
+        backgroundColor: "transparent",
+        borderColor: "hsl(var(--foreground))",
+        borderWidth: "1px",
         color: "hsl(var(--muted-foreground))",
       }}
     >
@@ -89,9 +90,11 @@ export function PageHeader({
 export function Badge({
   children,
   variant = "default",
+  cornerAnchor = false,
 }: {
   children: ReactNode;
   variant?: "default" | "winner" | "runner-up";
+  cornerAnchor?: boolean;
 }) {
   const variants = {
     default: {
@@ -103,15 +106,26 @@ export function Badge({
       color: "hsl(var(--background))",
     },
     "runner-up": {
-      backgroundColor: "hsl(var(--muted))",
+      backgroundColor: "hsl(var(--background))",
       color: "hsl(var(--foreground))",
-      border: "1px solid hsl(var(--border))",
+      border: "1px solid hsl(var(--foreground))",
     },
   };
 
+  if (cornerAnchor) {
+    return (
+      <span
+        className="absolute bottom-0 right-0 z-20 text-[10px] font-mono font-bold px-3 py-2 uppercase tracking-wider"
+        style={variants[variant]}
+      >
+        {children}
+      </span>
+    );
+  }
+
   return (
     <span
-      className="text-[10px] font-bold px-2 py-1 uppercase tracking-wide"
+      className="text-[10px] font-mono font-bold px-2 py-1 uppercase tracking-wider"
       style={variants[variant]}
     >
       {children}

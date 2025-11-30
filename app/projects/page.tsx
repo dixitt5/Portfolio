@@ -43,14 +43,9 @@ function ProjectCard({
 
       {/* Content */}
       <div className={`mb-8 ${featured ? "max-w-2xl" : ""}`}>
-        <div className="flex items-center gap-3 mb-3">
-          <h3 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:underline decoration-2 underline-offset-4">
-            {project.title}
-          </h3>
-          {project.badge && (
-            <Badge variant={project.badge.variant}>{project.badge.text}</Badge>
-          )}
-        </div>
+        <h3 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:underline decoration-2 underline-offset-4 mb-3">
+          {project.title}
+        </h3>
         <p
           style={{ color: "hsl(var(--muted-foreground))" }}
           className={`leading-relaxed ${featured ? "max-w-2xl" : ""}`}
@@ -60,11 +55,18 @@ function ProjectCard({
       </div>
 
       {/* Tech Stack */}
-      <div className="flex flex-wrap gap-2 mt-auto">
+      <div className={`flex flex-wrap gap-2 mt-auto ${project.badge ? "pr-20" : ""}`}>
         {project.tech.map((tech) => (
           <TechChip key={tech}>{tech}</TechChip>
         ))}
       </div>
+
+      {/* Corner Anchor Badge */}
+      {project.badge && (
+        <Badge variant={project.badge.variant} cornerAnchor>
+          {project.badge.text}
+        </Badge>
+      )}
 
       {/* Full Card Hit Area */}
       <a
