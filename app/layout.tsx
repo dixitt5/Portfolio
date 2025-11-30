@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,10 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body
         className={`font-sans flex flex-col min-h-screen prose-ui antialiased`}
       >
@@ -79,7 +76,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Nav />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-14">{children}</main>
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
