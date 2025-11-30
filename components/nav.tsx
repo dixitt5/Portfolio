@@ -15,10 +15,16 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b" style={{ borderColor: "hsl(var(--border))" }}>
+    <nav
+      className="border-0 border-b"
+      style={{ borderBottomColor: "hsl(var(--foreground))", borderBottomWidth: "1px", borderBottomStyle: "solid" }}
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="font-medium hover:underline">
+        <div className="flex justify-between items-center h-14">
+          <Link
+            href="/"
+            className="font-mono font-bold text-sm uppercase tracking-wider hover:underline"
+          >
             Dixit Tilaji
           </Link>
           <div className="flex items-center gap-6">
@@ -31,7 +37,9 @@ export function Nav() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-sm hover:underline"
+                    className={`font-mono text-xs uppercase tracking-wider hover:underline ${
+                      isActive ? "font-bold" : ""
+                    }`}
                     style={
                       isActive ? {} : { color: "hsl(var(--muted-foreground))" }
                     }
