@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/posts";
 import { PageHeader, TechChip } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Ramblings",
   description:
     "Read my thoughts on web development, programming, and technology.",
 };
@@ -22,7 +22,7 @@ function formatDate(dateString: string): string {
     .toUpperCase();
 }
 
-export default function BlogPage() {
+export default function RamblingsPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
       <PageHeader title="Ramblings." />
@@ -32,7 +32,7 @@ export default function BlogPage() {
         {posts.map((post) => (
           <Link
             key={post.slug}
-            href={`/blog/${post.slug}`}
+            href={`/ramblings/${post.slug}`}
             className="group py-10 border-b grid grid-cols-1 md:grid-cols-12 gap-6 items-start transition-colors"
             style={{ borderColor: "hsl(var(--foreground))" }}
           >
