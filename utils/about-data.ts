@@ -17,23 +17,31 @@ export const skills = {
 
 export const achievements = [
   {
-    title: "Winner, Odoo Hackathon '25",
-    description: "Globetrotter - ₹1,50,000 prize",
+    event: "Odoo Hackathon '25",
+    project: "Globetrotter",
+    rank: "WINNER",
+    prize: "₹1,50,000",
     type: "trophy" as const,
   },
   {
-    title: "2nd place, Azadi ka Amrut Mohatsav Hackathon 2022",
-    description: "Parivartan - Second among 2000+ teams, ₹30,000 prize",
+    event: "Azadi ka Amrut Mohatsav 2022",
+    project: "Parivartan",
+    rank: "2ND",
+    prize: "₹30,000",
     type: "medal" as const,
   },
   {
-    title: "2nd place, Hack-NU-Thon 4.0",
-    description: "SmartHive",
+    event: "Hack-NU-Thon 4.0",
+    project: "SmartHive",
+    rank: "2ND",
+    prize: "₹7000",
     type: "medal" as const,
   },
   {
-    title: "SSIP 2.0 Funding Secured",
-    description: "₹88,250 for Parivartan development",
+    event: "SSIP 2.0 Funding",
+    project: "Parivartan",
+    rank: "FUNDED",
+    prize: "₹88,250",
     type: "funding" as const,
   },
 ];
@@ -41,16 +49,16 @@ export const achievements = [
 export const openSourceContributions = [
   {
     project: "LlamaIndex",
-    description: "Multiple merged PRs contributing to the LlamaIndex ecosystem",
+    path: "/LlamaIndex",
     prs: [
-      { title: "Feature implementation & bug fixes", url: "#" },
-      { title: "Documentation improvements", url: "#" },
+      { title: "FEAT: workflow implementation", type: "FEAT" },
+      { title: "DOCS: readme improvements", type: "DOCS" },
     ],
   },
   {
     project: "Helper",
-    description: "Contributions to Helper project",
-    prs: [{ title: "Core functionality enhancements", url: "#" }],
+    path: "./Helper",
+    prs: [{ title: "CORE: functionality enhancements", type: "CORE" }],
   },
 ];
 

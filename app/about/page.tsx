@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   skills,
   achievements,
@@ -133,63 +133,164 @@ export default function AboutPage() {
 
         {/* Row 3: Achievements (6 cols) + Open Source (6 cols) */}
         <div className="col-span-1 md:col-span-6">
-          <BentoCard>
-            <SectionTitle>Achievements</SectionTitle>
-            <ul className="space-y-6">
-              {achievements.map((achievement, index) => (
-                <li key={index}>
-                  <h3 className="text-lg font-bold mb-1">{achievement.title}</h3>
-                  <p style={{ color: "hsl(var(--muted-foreground))" }}>
-                    {achievement.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </BentoCard>
+          {/* Achievements - Ledger Style */}
+          <SectionTitle>Achievements</SectionTitle>
+          <div
+            className="border"
+            style={{ borderColor: "hsl(var(--foreground))", borderWidth: "1px" }}
+          >
+            {achievements.map((achievement, index) => (
+              <div
+                key={index}
+                className="grid grid-cols-[auto_1fr_auto_auto] items-center"
+                style={{
+                  borderBottom:
+                    index < achievements.length - 1
+                      ? "1px solid hsl(var(--foreground))"
+                      : "none",
+                }}
+              >
+                {/* Index */}
+                <div
+                  className="p-3 font-mono text-2xl font-bold self-stretch flex items-center"
+                  style={{
+                    borderRight: "1px solid hsl(var(--foreground))",
+                    color: "hsl(var(--muted-foreground))",
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                {/* Event + Project */}
+                <div className="p-3">
+                  <div className="font-bold text-sm uppercase tracking-tight">
+                    {achievement.event}
+                  </div>
+                  <div
+                    className="font-mono text-xs"
+                    style={{ color: "hsl(var(--foreground))" }}
+                  >
+                    {achievement.project}
+                  </div>
+                </div>
+
+                {/* Rank Badge */}
+                <div
+                  className="px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider self-center"
+                  style={{
+                    backgroundColor: "hsl(var(--foreground))",
+                    color: "hsl(var(--background))",
+                  }}
+                >
+                  {achievement.rank}
+                </div>
+
+                {/* Prize */}
+                <div
+                  className="p-3 font-mono text-sm font-bold text-right min-w-[80px]"
+                  style={{
+                    borderLeft: "1px solid hsl(var(--foreground))",
+                  }}
+                >
+                  {achievement.prize || "—"}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="col-span-1 md:col-span-6">
-          <BentoCard>
-            <SectionTitle>Open Source</SectionTitle>
-            <p
-              className="text-sm mb-6"
-              style={{ color: "hsl(var(--muted-foreground))" }}
+          {/* Open Source - Terminal Output Style */}
+          <SectionTitle>Open Source</SectionTitle>
+          <div
+            className="border"
+            style={{ borderColor: "hsl(var(--foreground))", borderWidth: "1px" }}
+          >
+            {/* Stats Header - 70/30 split */}
+            <div
+              className="grid grid-cols-[2fr_1fr]"
+              style={{ borderBottom: "1px solid hsl(var(--foreground))" }}
             >
-              $4,500+ earned through open-source bounties
-            </p>
-            <ul className="space-y-6">
+              {/* PR Count - Hero Number (wider) */}
+              <div
+                className="p-4"
+                style={{ borderRight: "1px solid hsl(var(--foreground))" }}
+              >
+                <div
+                  className="font-mono text-[10px] uppercase tracking-widest mb-1"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
+                  PRS_MERGED
+                </div>
+                <div className="font-black text-5xl md:text-6xl tracking-tighter">
+                  15+
+                </div>
+              </div>
+
+              {/* Bounties - Secondary (narrower) */}
+              <div className="p-4">
+                <div
+                  className="font-mono text-[10px] uppercase tracking-widest mb-1"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
+                  EARNED
+                </div>
+                <div
+                  className="font-mono text-lg md:text-xl font-bold tracking-tight"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
+                  $4.5k+
+                </div>
+              </div>
+            </div>
+
+            {/* PR List - File Tree Style */}
+            <div className="p-4 font-mono text-xs space-y-3">
               {openSourceContributions.map((contribution, index) => (
-                <li key={index}>
-                  <h3 className="text-lg font-bold mb-1">
-                    {contribution.project}
-                  </h3>
-                  <p
-                    className="text-sm mb-2"
-                    style={{ color: "hsl(var(--muted-foreground))" }}
-                  >
-                    {contribution.description}
-                  </p>
-                  <div className="space-y-1">
-                    {contribution.prs.map((pr, prIndex) => (
-                      <a
-                        key={prIndex}
-                        href={pr.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm py-1 group"
-                      >
-                        <CheckCircle2 
-                                        className="w-4 h-4 flex-shrink-0 transition-colors"
-                                        style={{ color: "hsl(var(--muted-foreground))" }}
-                                      />
-                        <span className="group-hover:underline">{pr.title}</span>
-                      </a>
-                    ))}
+                <div key={index}>
+                  {/* Repo Path */}
+                  <div className="font-bold" style={{ color: "hsl(var(--foreground))" }}>
+                    {contribution.path}
                   </div>
-                </li>
+                  {/* PRs with tree structure */}
+                  <div className="mt-1">
+                    {contribution.prs.map((pr, prIndex) => {
+                      const isLast = prIndex === contribution.prs.length - 1;
+                      return (
+                        <div
+                          key={prIndex}
+                          className="flex items-center"
+                        >
+                          {/* Tree connector */}
+                          <span
+                            className="select-none w-6 flex-shrink-0"
+                            style={{ color: "hsl(var(--muted-foreground))" }}
+                          >
+                            {isLast ? "└─" : "├─"}
+                          </span>
+                          {/* Tag + Description */}
+                          <div className="flex items-center gap-2">
+                            <span
+                              className="px-1 font-bold text-[10px] leading-none py-0.5"
+                              style={{
+                                backgroundColor: "hsl(var(--foreground))",
+                                color: "hsl(var(--background))",
+                              }}
+                            >
+                              {pr.type}
+                            </span>
+                            <span style={{ color: "hsl(var(--foreground))" }}>
+                              {pr.title.replace(`${pr.type}: `, "")}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               ))}
-            </ul>
-          </BentoCard>
+            </div>
+          </div>
         </div>
 
         {/* Row 4: Experience (Full Width) */}
