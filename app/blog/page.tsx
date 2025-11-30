@@ -34,7 +34,7 @@ export default function BlogPage() {
             key={post.slug}
             href={`/blog/${post.slug}`}
             className="group py-10 border-b grid grid-cols-1 md:grid-cols-12 gap-6 items-start transition-colors"
-            style={{ borderColor: "hsl(var(--border))" }}
+            style={{ borderColor: "hsl(var(--foreground))" }}
           >
             {/* Date Column - 3 cols */}
             <div className="md:col-span-3 flex flex-col gap-2">

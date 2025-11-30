@@ -8,39 +8,39 @@ export default function Home() {
       <div className="max-w-6xl w-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-[90vw] md:max-w-full mx-auto">
           <div className="order-2 md:order-1 space-y-8 md:pr-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+            <div className="space-y-3">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
                 Dixit Tilaji
               </h1>
               <p
-                className="text-lg md:text-xl"
+                className="font-mono text-sm uppercase tracking-widest"
                 style={{ color: "hsl(var(--muted-foreground))" }}
               >
                 Thinker. Builder.
               </p>
             </div>
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-6">
               <Link
                 href="/about"
-                className="group relative inline-flex items-center gap-1.5 text-lg font-medium pb-1"
+                className="group relative inline-flex items-center gap-2 font-mono text-sm uppercase tracking-wider font-bold"
               >
                 <span>About Me</span>
                 <ArrowUpRight
-                  className="w-4 h-4 transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="w-4 h-4 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   strokeWidth={2.5}
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
               <Link
                 href="/projects"
-                className="group relative inline-flex items-center gap-1.5 text-lg font-medium pb-1"
+                className="group relative inline-flex items-center gap-2 font-mono text-sm uppercase tracking-wider font-bold"
               >
                 <span>View Projects</span>
                 <ArrowUpRight
-                  className="w-4 h-4 transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="w-4 h-4 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   strokeWidth={2.5}
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-current transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300 ease-out group-hover:w-full"></span>
               </Link>
             </div>
           </div>
