@@ -9,6 +9,7 @@ import {
   contact,
 } from "@/utils/about-data";
 import { BentoCard, SectionTitle, TechChip } from "@/components/ui";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 
 export const metadata: Metadata = {
   title: "About",
@@ -191,76 +192,51 @@ export default function AboutPage() {
           </BentoCard>
         </div>
 
-        {/* Row 4: Experience (9 cols) + Education (3 cols) */}
-        <div className="col-span-1 md:col-span-9">
-          <BentoCard>
-            <SectionTitle>Experience</SectionTitle>
-            <div className="space-y-10">
-              {experience.map((job, index) => (
-                <div
-                  key={index}
-                  className="grid grid-cols-1 md:grid-cols-4 gap-4"
-                >
-                  <div className="md:col-span-1">
-                    <p
-                      className="text-sm font-semibold uppercase tracking-wider"
-                      style={{ color: "hsl(var(--muted-foreground))" }}
-                    >
-                      {job.period}
-                    </p>
-                  </div>
-                  <div className="md:col-span-3 relative">
-                    <div
-                      className="hidden md:block absolute -left-4 top-1 bottom-0 w-px"
-                      style={{ backgroundColor: "hsl(var(--border))" }}
-                    />
-                    <h3 className="text-xl font-bold mb-1">{job.title}</h3>
-                    <p
-                      className="text-lg font-medium mb-2"
-                      style={{ color: "hsl(var(--muted-foreground))" }}
-                    >
-                      {job.company}
-                    </p>
-                    <ul
-                      className="list-disc list-outside ml-4 space-y-1.5 leading-relaxed"
-                      style={{ color: "hsl(var(--muted-foreground))" }}
-                    >
-                      {job.highlights.map((highlight, hIndex) => (
-                        <li key={hIndex}>{highlight}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </BentoCard>
+        {/* Row 4: Experience (Full Width) */}
+        <div className="col-span-1 md:col-span-12">
+          <SectionTitle>Experience</SectionTitle>
+          <ExperienceTimeline experiences={experience} />
         </div>
 
-        <div className="col-span-1 md:col-span-3">
-          <BentoCard>
-            <SectionTitle>Education</SectionTitle>
-            <div>
-              <h3 className="text-lg font-bold mb-1">{education.degree}</h3>
-              <p
+        {/* Row 5: Education - Brutalist data grid */}
+        <div className="col-span-1 md:col-span-12">
+          <SectionTitle>Education</SectionTitle>
+          <div
+            className="border grid grid-cols-1 md:grid-cols-[200px_1fr]"
+            style={{
+              borderColor: "hsl(var(--foreground))",
+              borderWidth: "1px",
+            }}
+          >
+            {/* Left Column: Metadata */}
+            <div
+              className="p-4 md:p-5 font-mono text-xs uppercase tracking-wider"
+              style={{
+                borderRight: "1px solid hsl(var(--foreground))",
+              }}
+            >
+              <div className="font-bold mb-2">{education.period}</div>
+              <div
                 className="mb-1"
                 style={{ color: "hsl(var(--muted-foreground))" }}
               >
-                {education.institution}
-              </p>
-              <p
-                className="text-sm mb-4"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
-                {education.period}
-              </p>
-              <p
-                className="text-sm"
-                style={{ color: "hsl(var(--muted-foreground))" }}
-              >
                 CGPA: {education.cgpa}
+              </div>
+            </div>
+
+            {/* Right Column: Details */}
+            <div className="p-4 md:p-5">
+              <h3 className="text-base md:text-lg font-bold uppercase tracking-tight mb-2">
+                {education.degree}
+              </h3>
+              <p
+                className="font-mono text-xs"
+                style={{ color: "hsl(var(--muted-foreground))" }}
+              >
+                → {education.institution}
               </p>
             </div>
-          </BentoCard>
+          </div>
         </div>
       </div>
     </div>
