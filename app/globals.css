@@ -54,3 +54,45 @@ samp {
 .hover\:border-foreground:hover {
   border-color: hsl(var(--foreground)) !important;
 }
+
+/* Prevent MDX content overflow on mobile */
+article pre,
+article code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+article img,
+article video,
+article iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Table wrapper for horizontal scroll on mobile */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
+.table-wrapper table {
+  min-width: 100%;
+}
+
+/* KaTeX math formula overflow handling */
+article .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
+}
+
+article .katex {
+  max-width: 100%;
+}
+
+/* Ensure inline code doesn't break layout */
+article :not(pre) > code {
+  word-break: break-word;
+}
