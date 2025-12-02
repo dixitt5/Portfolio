@@ -10,6 +10,7 @@ import {
 } from "@/utils/about-data";
 import { BentoCard, SectionTitle, TechChip } from "@/components/ui";
 import { ExperienceTimeline } from "@/components/experience-timeline";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -40,8 +41,8 @@ export default function AboutPage() {
             <p className="text-xl md:text-2xl font-medium leading-relaxed tracking-tight">
               I craft robust software solutions with a focus on clean code,
               test-driven development, and seamless user experiences. Currently
-              working in cross-functional teams and building scalable applications
-              using React, Next.js, Node.js, NestJS, and AWS.
+              working in cross-functional teams and building scalable
+              applications.
             </p>
             <p
               className="text-lg md:text-xl mt-6 leading-relaxed"
@@ -137,7 +138,10 @@ export default function AboutPage() {
           <SectionTitle>Achievements</SectionTitle>
           <div
             className="border"
-            style={{ borderColor: "hsl(var(--foreground))", borderWidth: "1px" }}
+            style={{
+              borderColor: "hsl(var(--foreground))",
+              borderWidth: "1px",
+            }}
           >
             {achievements.map((achievement, index) => (
               <div
@@ -204,7 +208,10 @@ export default function AboutPage() {
           <SectionTitle>Open Source</SectionTitle>
           <div
             className="border"
-            style={{ borderColor: "hsl(var(--foreground))", borderWidth: "1px" }}
+            style={{
+              borderColor: "hsl(var(--foreground))",
+              borderWidth: "1px",
+            }}
           >
             {/* Stats Header - 70/30 split */}
             <div
@@ -223,7 +230,11 @@ export default function AboutPage() {
                   PRS_MERGED
                 </div>
                 <div className="font-black text-5xl md:text-6xl tracking-tighter">
-                  15+
+                  {openSourceContributions.reduce(
+                    (acc, contribution) => acc + contribution.prs.length,
+                    0
+                  )}{" "}
+                  +
                 </div>
               </div>
 
@@ -249,7 +260,10 @@ export default function AboutPage() {
               {openSourceContributions.map((contribution, index) => (
                 <div key={index}>
                   {/* Repo Path */}
-                  <div className="font-bold" style={{ color: "hsl(var(--foreground))" }}>
+                  <div
+                    className="font-bold"
+                    style={{ color: "hsl(var(--foreground))" }}
+                  >
                     {contribution.path}
                   </div>
                   {/* PRs with tree structure */}
@@ -257,19 +271,20 @@ export default function AboutPage() {
                     {contribution.prs.map((pr, prIndex) => {
                       const isLast = prIndex === contribution.prs.length - 1;
                       return (
-                        <div
-                          key={prIndex}
-                          className="flex items-center"
-                        >
+                        <div key={prIndex} className="flex items-center">
                           {/* Tree connector */}
                           <span
-                            className="select-none w-6 flex-shrink-0"
+                            className="select-none w-6 shrink-0"
                             style={{ color: "hsl(var(--muted-foreground))" }}
                           >
                             {isLast ? "└─" : "├─"}
                           </span>
                           {/* Tag + Description */}
-                          <div className="flex items-center gap-2">
+                          <Link
+                            href={pr.link}
+                            target="_blank"
+                            className="flex items-center gap-2"
+                          >
                             <span
                               className="px-1 font-bold text-[10px] leading-none py-0.5"
                               style={{
@@ -282,7 +297,7 @@ export default function AboutPage() {
                             <span style={{ color: "hsl(var(--foreground))" }}>
                               {pr.title.replace(`${pr.type}: `, "")}
                             </span>
-                          </div>
+                          </Link>
                         </div>
                       );
                     })}

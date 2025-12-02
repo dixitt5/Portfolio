@@ -51,14 +51,18 @@ export const openSourceContributions = [
     project: "LlamaIndex",
     path: "/LlamaIndex",
     prs: [
-      { title: "FEAT: workflow implementation", type: "FEAT" },
-      { title: "DOCS: readme improvements", type: "DOCS" },
+      { title: "Add OpensearchVectorClient to conditionally check index existence for AOSS", type: "FIX", link: "https://github.com/run-llama/llama_index/pull/18560" },
     ],
   },
   {
     project: "Helper",
     path: "./Helper",
-    prs: [{ title: "CORE: functionality enhancements", type: "CORE" }],
+    prs: [
+      { title: "devIndicators configuration for test environment", type: "FIX", link: "https://github.com/antiwork/helper/pull/868" },
+      { title: "update image-attachments specs", type: "TEST", link: "https://github.com/antiwork/helper/pull/842" },
+      { title: "add a CI action for running e2e tests", type: "FEAT", link: "https://github.com/antiwork/helper/pull/798" },
+      { title: "update test environment setup and scripts for e2e testing", type: "FEAT", link: "https://github.com/antiwork/helper/pull/722" },
+    ],
   },
 ];
 

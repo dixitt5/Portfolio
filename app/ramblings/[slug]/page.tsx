@@ -48,8 +48,8 @@ export default async function RamblingsPost({ params }: Props) {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12 md:py-24">
-      <article className="max-w-none">
+    <div className="max-w-6xl mx-auto px-6 py-12 md:py-24 overflow-x-hidden">
+      <article className="max-w-none overflow-x-auto">
         <MDXContent />
       </article>
     </div>
