@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { MaintenancePage } from "@/components/maintenance";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const isMaintenanceMode = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
@@ -83,7 +84,10 @@ export default function RootLayout({
           ) : (
             <>
               <Nav />
-              <main className="flex-1 pt-14">{children}</main>
+              <main className="flex-1 pt-14">
+                {children}
+                <Analytics />
+              </main>
               <ScrollToTop />
             </>
           )}
