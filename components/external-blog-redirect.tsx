@@ -33,11 +33,11 @@ export function ExternalBlogRedirect({
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12 md:py-24">
-      <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-8">
-        <div className="space-y-4">
+      <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
+        <div className="space-y-2">
           <Loader2 className="w-12 h-12 animate-spin mx-auto" />
           <p
-            className="text-lg leading-relaxed"
+            className="font-sans tracking-tight decoration-2 text-lg leading-relaxed"
             style={{ color: "hsl(var(--muted-foreground))" }}
           >
             Redirecting to <strong>{title}</strong> in a moment, please wait...
@@ -45,11 +45,11 @@ export function ExternalBlogRedirect({
         </div>
 
         <div
-          className="pt-4 border-t w-full"
+          className="border-t w-full"
           style={{ borderColor: "hsl(var(--border))" }}
         >
           <p
-            className="mb-4 text-sm"
+            className="mb-4 font-sans text-sm"
             style={{ color: "hsl(var(--muted-foreground))" }}
           >
             If you are not redirected automatically, click{" "}
@@ -61,8 +61,7 @@ export function ExternalBlogRedirect({
               className="underline"
             >
               here
-            </Link>{" "}
-            to continue to the blog.
+            </Link>
           </p>
         </div>
       </div>
