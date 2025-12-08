@@ -18,7 +18,13 @@ export function ExternalBlogRedirect({
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      window.open(url, "_blank", "noopener,noreferrer");
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.referrerPolicy = "origin";
+      link.click();
+
       router.push("/ramblings");
     }, 3000);
 
@@ -50,7 +56,8 @@ export function ExternalBlogRedirect({
             <Link
               href={url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
+              referrerPolicy="origin"
               className="underline"
             >
               here
