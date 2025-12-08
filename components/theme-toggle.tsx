@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "./icons";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -15,14 +15,15 @@ export function ThemeToggle() {
   if (!mounted) {
     return <button className="text-sm w-12" />;
   }
+  const currentTheme = resolvedTheme || theme;
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
       className="text-sm hover:opacity-70 transition-opacity cursor-pointer text-muted-foreground"
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      {currentTheme === "dark" ? <SunIcon /> : <MoonIcon />}
     </button>
   );
 }
