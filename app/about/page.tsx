@@ -74,6 +74,20 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <a
+                    href={contact.peerlist}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-bold hover:underline flex items-center group"
+                  >
+                    Peerlist
+                    <ArrowRight
+                      className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                      style={{ color: "hsl(var(--muted-foreground))" }}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
                     href={contact.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"

@@ -110,7 +110,7 @@ export const experience = [
     period: "Jul 2023 — Aug 2023",
     location: "Remote",
     highlights: [
-      "Developed blockchain product and smart contracts",
+      "Developed smart contracts and handled integration with NextJS app as well as React Native app",
       "Implemented Firebase database for off-chain data management",
     ],
   },
@@ -120,7 +120,7 @@ export const experience = [
     period: "Feb 2023 — Jun 2023",
     location: "Remote",
     highlights: [
-      "Built certificate creation system with web3.js on Mumbai testnet",
+      "Built certificate creation system with web3.js on Polygon's Mumbai testnet",
       "Designed certificate UI with EmailJS-based notifications",
     ],
   },
@@ -139,4 +139,5 @@ export const contact = {
   github: "https://github.com/dixitt5",
   linkedin: "https://www.linkedin.com/in/dixit5/",
   medium: "https://medium.com/@tilajidixit",
+  peerlist: "https://peerlist.io/dixit",
 };
