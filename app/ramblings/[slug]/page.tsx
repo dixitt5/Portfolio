@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { ExternalBlogRedirect } from "@/components/external-blog-redirect";
 
 const posts = getAllPosts();
 
@@ -38,6 +39,10 @@ export default async function RamblingsPost({ params }: Props) {
 
   if (!post) {
     notFound();
+  }
+
+  if (post.externalUrl) {
+    return <ExternalBlogRedirect url={post.externalUrl} title={post.title} />;
   }
 
   let MDXContent;

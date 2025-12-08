@@ -6,18 +6,29 @@ export interface Post {
   tags: string[];
   author?: string;
   readingTime?: string;
+  externalUrl?: string;
 }
 
 export const posts: Post[] = [
   {
-    slug: "comprehensive",
-    title: "Comprehensive Guide to Modern Web Development",
-    description:
-      "A comprehensive blog post showcasing all Prose UI components including typography, code blocks, callouts, images, tables, and mathematical formulas.",
-    date: "2024-11-09",
-    tags: ["web development", "react", "nextjs", "tutorial"],
+    slug: "quick-cue",
+    title: "Quick Cue",
+    description: "How I built Quick Cue for better prompt management in browser",
+    date: "2025-04-11",
+    tags: ["browser apis", "motion", "react"],
+    externalUrl: "https://blog.incubyte.co/blog/quick-cue-chrome-extension/",
+    readingTime: "3 min read",
     author: "Dixit Tilaji",
-    readingTime: "5 min read",
+  },
+  {
+    slug: "using-firebase-cloud-functions",
+    title: "Exporting Firestore Data as excel using cloud functions",
+    description: "Me playing with firebase cloud functions",
+    date: "2024-05-07",
+    tags: ["firebase", "react", "cloud functions"],
+    externalUrl: "https://blog.incubyte.co/blog/using-firebase-cloud-functions",
+    readingTime: "10 min read",
+    author: "Dixit Tilaji",
   },
 ];
 
