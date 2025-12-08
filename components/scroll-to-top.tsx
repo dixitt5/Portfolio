@@ -26,7 +26,7 @@ export function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 p-3 font-mono text-xs uppercase cursor-pointer tracking-wider transition-all duration-300 ${
+      className={`fixed bottom-6 right-4 z-50 p-3 font-mono text-xs uppercase cursor-pointer tracking-wider transition-all duration-300 ${
         isVisible
           ? "translate-y-0 opacity-100"
           : "translate-y-4 opacity-0 pointer-events-none"

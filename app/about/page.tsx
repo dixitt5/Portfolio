@@ -133,7 +133,7 @@ export default function AboutPage() {
         </div>
 
         {/* Row 3: Achievements (6 cols) + Open Source (6 cols) */}
-        <div className="col-span-1 md:col-span-6">
+        <div className="col-span-1 mt-4 md:col-span-6 md:mt-0">
           {/* Achievements - Ledger Style */}
           <SectionTitle>Achievements</SectionTitle>
           <div
@@ -203,7 +203,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="col-span-1 md:col-span-6">
+        <div className="col-span-1 mt-4 md:col-span-6 md:mt-0">
           {/* Open Source - Terminal Output Style */}
           <SectionTitle>Open Source</SectionTitle>
           <div
@@ -227,7 +227,7 @@ export default function AboutPage() {
                   className="font-mono text-[10px] uppercase tracking-widest mb-1"
                   style={{ color: "hsl(var(--muted-foreground))" }}
                 >
-                  PRS_MERGED
+                  PRS MERGED
                 </div>
                 <div className="font-black text-5xl md:text-6xl tracking-tighter">
                   {openSourceContributions.reduce(
@@ -247,7 +247,7 @@ export default function AboutPage() {
                   EARNED
                 </div>
                 <div
-                  className="font-mono text-lg md:text-xl font-bold tracking-tight"
+                  className="font-mono text-3xl md:text-4xl font-bold tracking-tight"
                   style={{ color: "hsl(var(--muted-foreground))" }}
                 >
                   $4.5k+
@@ -309,7 +309,7 @@ export default function AboutPage() {
         </div>
 
         {/* Row 4: Experience (Full Width) */}
-        <div className="col-span-1 md:col-span-12">
+        <div className="col-span-1 mt-4 md:col-span-12 md:mt-0">
           <SectionTitle>Experience</SectionTitle>
           <ExperienceTimeline experiences={experience} />
         </div>

@@ -1,5 +1,5 @@
 export const skills = {
-  languages: ["TypeScript", "JavaScript", "C++", "C", "Solidity"],
+  languages: ["TypeScript", "JavaScript", "C++", "Python", "Solidity"],
   frameworks: [
     "React",
     "Next.js",
@@ -12,6 +12,9 @@ export const skills = {
     "AWS",
     "TailwindCSS",
     "Langchain",
+    "Langgraph",
+    "LlamaIndex",
+    "Playwright",
   ],
 };
 
