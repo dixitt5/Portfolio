@@ -23,12 +23,12 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Portfolio | Dixit Tilaji",
-    template: "%s | Portfolio",
+    default: "Dixit Tilaji | Portfolio",
+    template: "%s | Dixit Tilaji",
   },
   description:
-    "Full-stack developer portfolio featuring blog posts, projects, and interactive games.",
-  keywords: ["portfolio", "developer", "blog", "projects", "web development"],
+    "Dixit and his adventures in the world of software development.",
+  keywords: ["portfolio", "developer", "blog", "projects", "web development", "dixit tilaji"],
   authors: [{ name: "Dixit Tilaji" }],
   creator: "Dixit Tilaji",
   metadataBase: new URL(
@@ -38,17 +38,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    title: "Portfolio | Dixit Tilaji",
+    title: "Dixit Tilaji | Portfolio",
     description:
-      "Full-stack developer portfolio featuring blog posts, projects, and interactive games.",
-    siteName: "Portfolio",
+      "Dixit and his adventures in the world of software development.",
+    siteName: "Dixit Tilaji",
   },
   twitter: {
     card: "summary_large_image",
     title: "Portfolio | Dixit Tilaji",
     description:
-      "Full-stack developer portfolio featuring blog posts, projects, and interactive games.",
-    creator: "@yourusername",
+      "Dixit and his adventures in the world of software development.",
+    creator: "@dixitt5",
   },
   robots: {
     index: true,
