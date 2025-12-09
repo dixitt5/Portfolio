@@ -17,9 +17,9 @@ export const projects: Project[] = [
     id: 1,
     title: "QuickCue",
     description:
-      "Chrome extension for efficient video navigation using Motion API. Engineered for speed and accessibility.",
-    tech: ["Motion API", "ShadCn", "Chrome Store"],
-    year: "2024",
+      "Browser extension for efficient local prompt management and easy to use injection of prompts",
+    tech: ["Motion", "Shadcn", "Browser APIs", "React"],
+    year: "2025",
     link: "https://chromewebstore.google.com/detail/Quick%20Cue/pcdhefoofnagnpdmlepnlgkbmgapfijl",
   },
   {
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     title: "Globetrotter",
     description:
       "AI-powered personalized travel planning application. Winner of Odoo Hackathon '25 (₹1,50,000 prize).",
-    tech: ["ReactJS", "AI Agents", "Odoo"],
+    tech: ["ReactJS", "Gemini API", "NestJS"],
     year: "2025",
     link: "https://github.com/dixitt5/GlobeTrotter",
     badge: {
