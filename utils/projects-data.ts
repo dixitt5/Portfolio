@@ -26,7 +26,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Globetrotter",
     description:
-      "AI-powered personalized travel planning application. Winner of Odoo Hackathon '25 (₹1,00,000 prize).",
+      "AI-powered personalized travel planning application. Winner of Odoo Hackathon '25 (₹1,50,000 prize).",
     tech: ["ReactJS", "AI Agents", "Odoo"],
     year: "2025",
     link: "https://github.com/dixitt5/GlobeTrotter",
