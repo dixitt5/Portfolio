@@ -26,14 +26,18 @@ export const metadata: Metadata = {
     default: "Dixit Tilaji | Portfolio",
     template: "%s | Dixit Tilaji",
   },
-  description:
-    "Dixit and his adventures in the world of software development.",
-  keywords: ["portfolio", "developer", "blog", "projects", "web development", "dixit tilaji"],
+  description: "Dixit and his adventures in the world of software development.",
+  keywords: [
+    "portfolio",
+    "developer",
+    "blog",
+    "projects",
+    "web development",
+    "dixit tilaji",
+  ],
   authors: [{ name: "Dixit Tilaji" }],
   creator: "Dixit Tilaji",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+  metadataBase: new URL("https://dixitt.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
