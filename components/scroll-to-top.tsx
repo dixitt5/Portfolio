@@ -8,7 +8,6 @@ export function ScrollToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show button when scrolled down 400px
       setIsVisible(window.scrollY > 400);
     };
 

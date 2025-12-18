@@ -20,7 +20,6 @@ export function MaintenancePage() {
       </div>
 
       <div className="max-w-2xl w-full text-center space-y-8">
-        {/* Main heading */}
         <div className="space-y-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
             Build In Progress
@@ -33,7 +32,6 @@ export function MaintenancePage() {
           </p>
         </div>
 
-        {/* Progress bar */}
         <div className="w-full max-w-md mx-auto space-y-2">
           <div
             className="h-1 w-full"
@@ -50,7 +48,6 @@ export function MaintenancePage() {
           </div>
         </div>
 
-        {/* Status message */}
         <div
           className="font-mono text-xs uppercase tracking-wider space-y-2"
           style={{ color: "hsl(var(--muted-foreground))" }}
@@ -58,7 +55,6 @@ export function MaintenancePage() {
           <p className="opacity-60">Check back soon</p>
         </div>
 
-        {/* Signature */}
         <div
           className="pt-8 border-t"
           style={{ borderColor: "hsl(var(--border))" }}
@@ -72,7 +68,6 @@ export function MaintenancePage() {
         </div>
       </div>
 
-      {/* CSS for progress animation */}
       <style jsx>{`
         @keyframes progress {
           0% {

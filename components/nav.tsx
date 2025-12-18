@@ -22,7 +22,6 @@ export function Nav() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Show navbar when scrolling up or at the top
       if (currentScrollY < lastScrollY || currentScrollY < 50) {
         setIsVisible(true);
       } else {
@@ -36,14 +35,12 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setTimeout(() => {
       setIsMobileMenuOpen(false);
     }, 100);
   }, [pathname]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -77,7 +74,6 @@ export function Nav() {
               Dixit Tilaji
             </Link>
             <div className="flex items-center gap-4">
-              {/* Desktop Navigation */}
               <div className="hidden md:flex gap-6">
                 {navigation.map((item) => {
                   const isActive =
@@ -102,7 +98,6 @@ export function Nav() {
 
               <ThemeToggle />
 
-              {/* Mobile Hamburger Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
@@ -133,7 +128,6 @@ export function Nav() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
           isMobileMenuOpen

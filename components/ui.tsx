@@ -1,9 +1,5 @@
 import { ReactNode } from "react";
 
-/**
- * Shared UI components for the Structured Brutalist design system
- */
-
 export function BentoCard({
   children,
   className = "",
