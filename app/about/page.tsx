@@ -261,10 +261,10 @@ export default function AboutPage() {
                   EARNED
                 </div>
                 <div
-                  className="font-mono text-3xl md:text-4xl font-bold tracking-tight"
+                  className="font-black text-4xl md:text-5xl tracking-wider leading-tight"
                   style={{ color: "hsl(var(--muted-foreground))" }}
                 >
-                  $4.5k+
+                  $4.5K+
                 </div>
               </div>
             </div>
