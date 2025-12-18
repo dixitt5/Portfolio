@@ -38,6 +38,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Dixit Tilaji" }],
   creator: "Dixit Tilaji",
   metadataBase: new URL("https://dixitt.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
