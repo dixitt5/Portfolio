@@ -22,7 +22,6 @@ function ExperienceRow({
         borderBottom: isLast ? "none" : "1px solid hsl(var(--foreground))",
       }}
     >
-      {/* Left Column: Metadata */}
       <div
         className="p-4 md:p-5 font-mono text-xs uppercase tracking-wider"
         style={{
@@ -64,7 +63,6 @@ function ExperienceRow({
         )}
       </div>
 
-      {/* Right Column: Details */}
       <div className="p-4 md:p-5">
         <h3 className="text-base md:text-lg font-bold uppercase tracking-tight mb-3">
           {job.title}
