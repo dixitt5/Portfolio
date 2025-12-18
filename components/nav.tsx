@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { ThemeToggle } from "./theme-toggle";
 
 const navigation = [
-  { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
   { name: "Ramblings", href: "/ramblings" },
   { name: "Games", href: "/games" },
@@ -87,7 +86,9 @@ export function Nav() {
                         isActive ? "font-bold" : ""
                       }`}
                       style={
-                        isActive ? {} : { color: "hsl(var(--muted-foreground))" }
+                        isActive
+                          ? {}
+                          : { color: "hsl(var(--muted-foreground))" }
                       }
                     >
                       {item.name}
@@ -139,8 +140,7 @@ export function Nav() {
         <div className="flex flex-col justify-center items-start h-full px-6 pt-14">
           {navigation.map((item, index) => {
             const isActive =
-              pathname === item.href ||
-              pathname?.startsWith(item.href + "/");
+              pathname === item.href || pathname?.startsWith(item.href + "/");
             return (
               <Link
                 key={item.href}
@@ -153,13 +153,18 @@ export function Nav() {
                     ? "hsl(var(--foreground))"
                     : "hsl(var(--muted-foreground))",
                   transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : "0ms",
-                  transform: isMobileMenuOpen ? "translateX(0)" : "translateX(-20px)",
+                  transform: isMobileMenuOpen
+                    ? "translateX(0)"
+                    : "translateX(-20px)",
                   opacity: isMobileMenuOpen ? 1 : 0,
                   borderBottom: "1px solid hsl(var(--foreground))",
                   width: "100%",
                 }}
               >
-                <span className="font-mono text-xs mr-3" style={{ color: "hsl(var(--muted-foreground))" }}>
+                <span
+                  className="font-mono text-xs mr-3"
+                  style={{ color: "hsl(var(--muted-foreground))" }}
+                >
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {item.name}
