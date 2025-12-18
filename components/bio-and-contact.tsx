@@ -9,15 +9,15 @@ export function BioAndContact() {
         <BentoCard>
           <p className="text-xl md:text-2xl font-medium leading-relaxed tracking-tight">
             I craft robust software solutions with a focus on clean code,
-            test-driven development, and seamless user experiences.
-            Currently working in cross-functional teams and building
-            scalable applications.
+            test-driven development, and seamless user experiences. Currently
+            working in cross-functional teams and building scalable
+            applications.
           </p>
           <p
             className="text-lg md:text-xl mt-6 leading-relaxed"
             style={{ color: "hsl(var(--muted-foreground))" }}
           >
-            I believe every code written should tell a story.
+            I believe every piece of written code should tell a story.
           </p>
         </BentoCard>
       </div>
