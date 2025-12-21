@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import HeroIllustration from "@/public/hero-illustration.svg";
+import { ScrollDownArrow } from "./scroll-down-arrow";
 
 export function HeroSection() {
   const scrollToAbout = (e: React.MouseEvent) => {
@@ -13,7 +14,7 @@ export function HeroSection() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-8">
+    <div className="relative min-h-screen flex items-center justify-center px-6 py-8">
       <div className="max-w-6xl w-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-[90vw] md:max-w-full mx-auto">
           <div className="order-2 md:order-1 space-y-8 md:pr-8">
@@ -64,6 +65,8 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
+      <ScrollDownArrow delay={3000} targetId="about-section" />
     </div>
   );
 }
