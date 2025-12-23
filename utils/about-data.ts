@@ -76,10 +76,10 @@ export const experience = [
     period: "Jul 2024 — Present",
     location: "Remote",
     highlights: [
-      "Leading a cross-functional team for a US-based client using Express.js, React, and Next.js",
-      "Integrated in-house AI product with client requirements for seamless adoption",
-      "Maintained AWS-based infrastructure for scalable deployments",
-      "Developed reusable components and optimized backend workflows",
+      "Worked on an in-house AI product for seamless adoption",
+      "Tinkered POCs around various use-cases",
+      "Handled AWS-based infrastructure for scalable deployments",
+      "Tools: React, Next.js, NestJS, Express, AWS, Azure, TailwindCSS, Langchain, Langgraph, LlamaIndex, Python, TypeScript",
     ],
   },
   {
@@ -89,9 +89,10 @@ export const experience = [
     location: "Remote",
     highlights: [
       "Enhanced UI/UX using ChakraUI, Next.js, and NestJS",
-      "Built RAG app powered by GPT for document queries",
-      "Created Zapier automation for workflow efficiency",
-      "Developed identity resolution app using FullContact APIs",
+      "Built a RAG app powered by GPT for document queries",
+      "Implemented Zapier automation for workflow efficiency",
+      "Developed an identity resolution app using FullContact APIs",
+      "Tools: Next.js, NestJS, TailwindCSS, Langchain, TypeScript",
     ],
   },
   {
@@ -100,8 +101,9 @@ export const experience = [
     period: "Aug 2023 — Jan 2024",
     location: "Remote",
     highlights: [
-      "Architected Firebase solutions including Cloud Functions",
-      "Led frontend initiatives for improved UX",
+      "Worked full-stack on a Sneaker sourcing platform",
+      "Led end-to-end delivery of features from scratch",
+      "Tools: Next.js, Firebase, TailwindCSS, Javascript",
     ],
   },
   {
@@ -110,8 +112,9 @@ export const experience = [
     period: "Jul 2023 — Aug 2023",
     location: "Remote",
     highlights: [
-      "Developed smart contracts and handled integration with NextJS app as well as React Native app",
-      "Implemented Firebase database for off-chain data management",
+      "Wrote smart contracts and handled WEB3 integration with a NextJS and React Native app",
+      "Ramped up Firebase Firestore for storing transactional data off-chain",
+      "Tools: Solidity, Web3.js, NextJS, React Native, Firebase, TailwindCSS, Javascript",
     ],
   },
   {
@@ -120,8 +123,9 @@ export const experience = [
     period: "Feb 2023 — Jun 2023",
     location: "Remote",
     highlights: [
-      "Built certificate creation system with web3.js on Polygon's Mumbai testnet",
-      "Designed certificate UI with EmailJS-based notifications",
+      "Built a certificate creation system with web3.js integrated with Polygon's Mumbai testnet",
+      "Designed the certificate UI with EmailJS-based notifications",
+      "Tools: Web3.js, Polygon, EmailJS, TypeScript",
     ],
   },
 ];
