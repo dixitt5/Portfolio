@@ -8,8 +8,7 @@ import { ThemeToggle } from "./theme-toggle";
 const navigation = [
   { name: "Projects", href: "/projects" },
   { name: "Ramblings", href: "/ramblings" },
-  { name: "Vault", href: "/vault" },
-  { name: "Games", href: "/games" },
+  { name: "Vault", href: "/vault" }
 ];
 
 export function Nav() {
