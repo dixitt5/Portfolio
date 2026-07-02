@@ -14,7 +14,7 @@ Prose UI provides excellent support for all standard typography elements. Let's 
 
 ### Text Formatting
 
-You can use **bold text** to emphasize important points, *italic text* for subtle emphasis, and ***bold italic*** for maximum impact. You can also use ~~strikethrough~~ for corrections.
+You can use **bold text** to emphasize important points, _italic text_ for subtle emphasis, and **_bold italic_** for maximum impact. You can also use ~~strikethrough~~ for corrections.
 
 Here's some inline code: `const greeting = "Hello, World!"` which is perfect for short code snippets within paragraphs.
 
@@ -64,28 +64,28 @@ interface User {
   id: string;
   name: string;
   email: string;
-  role: 'admin' | 'user' | 'guest';
+  role: "admin" | "user" | "guest";
 }
 
 async function fetchUser<T extends User>(userId: string): Promise<T> {
   const response = await fetch(`/api/users/${userId}`);
-  
+
   if (!response.ok) {
     throw new Error(`Failed to fetch user: ${response.statusText}`);
   }
-  
+
   return response.json();
 }
 
 // Using the function
-const user = await fetchUser<User>('user-123');
+const user = await fetchUser<User>("user-123");
 console.log(`Welcome, ${user.name}!`);
 ```
 
 ### React Component Example
 
 ```tsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface Post {
   id: number;
@@ -100,11 +100,11 @@ export default function BlogList() {
   useEffect(() => {
     async function loadPosts() {
       try {
-        const response = await fetch('/api/posts');
+        const response = await fetch("/api/posts");
         const data = await response.json();
         setPosts(data);
       } catch (error) {
-        console.error('Failed to load posts:', error);
+        console.error("Failed to load posts:", error);
       } finally {
         setLoading(false);
       }
@@ -117,7 +117,7 @@ export default function BlogList() {
 
   return (
     <div className="space-y-4">
-      {posts.map(post => (
+      {posts.map((post) => (
         <article key={post.id} className="border p-4 rounded-lg">
           <h2 className="text-2xl font-bold">{post.title}</h2>
           <p className="text-gray-600">{post.content}</p>
@@ -136,22 +136,22 @@ import asyncio
 
 class DataProcessor:
     """A class for processing data asynchronously"""
-    
+
     def __init__(self, batch_size: int = 100):
         self.batch_size = batch_size
         self.results: List[Dict] = []
-    
+
     async def process_item(self, item: Dict) -> Dict:
         """Process a single item"""
         # Simulate processing delay
         await asyncio.sleep(0.1)
-        
+
         return {
             'id': item.get('id'),
             'processed': True,
             'data': item.get('data', '').upper()
         }
-    
+
     async def process_batch(self, items: List[Dict]) -> List[Dict]:
         """Process multiple items concurrently"""
         tasks = [self.process_item(item) for item in items]
@@ -168,7 +168,7 @@ results = await processor.process_batch(items)
 ```sql
 -- Complex query with CTEs and window functions
 WITH monthly_sales AS (
-  SELECT 
+  SELECT
     DATE_TRUNC('month', order_date) AS month,
     product_id,
     SUM(quantity * price) AS total_sales,
@@ -178,7 +178,7 @@ WITH monthly_sales AS (
   GROUP BY DATE_TRUNC('month', order_date), product_id
 ),
 ranked_products AS (
-  SELECT 
+  SELECT
     month,
     product_id,
     total_sales,
@@ -186,7 +186,7 @@ ranked_products AS (
     ROW_NUMBER() OVER (PARTITION BY month ORDER BY total_sales DESC) AS rank
   FROM monthly_sales
 )
-SELECT 
+SELECT
   month,
   product_id,
   total_sales,
@@ -202,51 +202,59 @@ ORDER BY month DESC, rank ASC;
 Prose UI provides beautiful callout components for highlighting different types of information:
 
 <Callout variant="info" title="Information">
-Use the info callout for general information or helpful insights. This is perfect for providing context or additional details that complement your main content.
+  Use the info callout for general information or helpful insights. This is
+  perfect for providing context or additional details that complement your main
+  content.
 </Callout>
 
 <Callout variant="note" title="Quick Note">
-Notes are perfect for adding additional context or side notes. They help readers understand nuances without interrupting the main flow of your content.
+  Notes are perfect for adding additional context or side notes. They help
+  readers understand nuances without interrupting the main flow of your content.
 </Callout>
 
 <Callout variant="tip" title="Pro Tip">
-Tips are great for sharing best practices, shortcuts, or suggestions that can help your readers work more efficiently. Share your expertise here!
+  Tips are great for sharing best practices, shortcuts, or suggestions that can
+  help your readers work more efficiently. Share your expertise here!
 </Callout>
 
 <Callout variant="warning" title="Important Warning">
-Use warnings to caution users about potential issues, deprecated features, or things they should be careful about. This helps prevent common mistakes.
+  Use warnings to caution users about potential issues, deprecated features, or
+  things they should be careful about. This helps prevent common mistakes.
 </Callout>
 
 <Callout variant="danger" title="Critical Alert">
-Danger callouts should be used for critical errors, security vulnerabilities, or actions that could have serious consequences. Use sparingly for maximum impact.
+  Danger callouts should be used for critical errors, security vulnerabilities,
+  or actions that could have serious consequences. Use sparingly for maximum
+  impact.
 </Callout>
 
 ## Tables with Data
 
 Tables are essential for presenting structured data. Here's a comparison of popular JavaScript frameworks:
 
-| Framework | Release Year | Type | Learning Curve | Performance | Popularity |
-|-----------|--------------|------|----------------|-------------|------------|
-| React | 2013 | Library | Medium | High | ⭐⭐⭐⭐⭐ |
-| Vue | 2014 | Framework | Easy | High | ⭐⭐⭐⭐ |
-| Angular | 2016 | Framework | Steep | High | ⭐⭐⭐⭐ |
-| Svelte | 2016 | Compiler | Easy | Very High | ⭐⭐⭐ |
-| Next.js | 2016 | Meta-Framework | Medium | Very High | ⭐⭐⭐⭐⭐ |
+| Framework | Release Year | Type           | Learning Curve | Performance | Popularity |
+| --------- | ------------ | -------------- | -------------- | ----------- | ---------- |
+| React     | 2013         | Library        | Medium         | High        | ⭐⭐⭐⭐⭐ |
+| Vue       | 2014         | Framework      | Easy           | High        | ⭐⭐⭐⭐   |
+| Angular   | 2016         | Framework      | Steep          | High        | ⭐⭐⭐⭐   |
+| Svelte    | 2016         | Compiler       | Easy           | Very High   | ⭐⭐⭐     |
+| Next.js   | 2016         | Meta-Framework | Medium         | Very High   | ⭐⭐⭐⭐⭐ |
 
 ### More Complex Table with Alignment
 
 You can also align columns differently:
 
-| Feature | React | Vue | Angular | Svelte |
-|:--------|:-----:|:---:|:-------:|-------:|
-| Virtual DOM | ✅ | ✅ | ❌ | ❌ |
-| TypeScript | ✅ | ✅ | ✅ | ✅ |
-| SSR Support | ✅ | ✅ | ✅ | ✅ |
-| File Size (gzipped) | 42 KB | 34 KB | 167 KB | 1.6 KB |
-| GitHub Stars | 220K+ | 207K+ | 95K+ | 75K+ |
+| Feature             | React |  Vue  | Angular | Svelte |
+| :------------------ | :---: | :---: | :-----: | -----: |
+| Virtual DOM         |  ✅   |  ✅   |   ❌    |     ❌ |
+| TypeScript          |  ✅   |  ✅   |   ✅    |     ✅ |
+| SSR Support         |  ✅   |  ✅   |   ✅    |     ✅ |
+| File Size (gzipped) | 42 KB | 34 KB | 167 KB  | 1.6 KB |
+| GitHub Stars        | 220K+ | 207K+ |  95K+   |   75K+ |
 
 <Callout variant="note" title="About Table Data">
-The data in these tables is approximate and represents the state as of late 2024. Framework popularity and features evolve rapidly!
+  The data in these tables is approximate and represents the state as of late
+  2024. Framework popularity and features evolve rapidly!
 </Callout>
 
 ## Mathematical Formulas
@@ -325,7 +333,8 @@ You can create [inline links](https://prose-ui.com) easily. Here are some useful
 - [Tailwind CSS](https://tailwindcss.com)
 
 <Callout variant="tip" title="Resource Tip">
-Bookmark these resources for quick reference while developing. They're constantly updated with the latest best practices and features.
+  Bookmark these resources for quick reference while developing. They're
+  constantly updated with the latest best practices and features.
 </Callout>
 
 ## Nested Content Structures
@@ -353,8 +362,8 @@ You can use horizontal rules to separate major sections:
 ### API Route Example (Next.js App Router)
 
 ```typescript
-import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
 
 // Request validation schema
 const postSchema = z.object({
@@ -369,7 +378,7 @@ export async function POST(request: NextRequest) {
     // Parse and validate request body
     const body = await request.json();
     const data = postSchema.parse(body);
-    
+
     // Store in database (example)
     const post = await db.post.create({
       data: {
@@ -380,35 +389,35 @@ export async function POST(request: NextRequest) {
         createdAt: new Date(),
       },
     });
-    
+
     return NextResponse.json(post, { status: 201 });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: 'Validation failed', details: error.errors },
-        { status: 400 }
+        { error: "Validation failed", details: error.errors },
+        { status: 400 },
       );
     }
-    
+
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      { error: "Internal server error" },
+      { status: 500 },
     );
   }
 }
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const page = parseInt(searchParams.get('page') || '1');
-  const limit = parseInt(searchParams.get('limit') || '10');
-  
+  const page = parseInt(searchParams.get("page") || "1");
+  const limit = parseInt(searchParams.get("limit") || "10");
+
   const posts = await db.post.findMany({
     where: { published: true },
     skip: (page - 1) * limit,
     take: limit,
-    orderBy: { createdAt: 'desc' },
+    orderBy: { createdAt: "desc" },
   });
-  
+
   return NextResponse.json(posts);
 }
 ```
@@ -416,11 +425,11 @@ export async function GET(request: NextRequest) {
 ## Blockquotes with Citations
 
 > "The best way to predict the future is to invent it."
-> 
+>
 > — Alan Kay
 
 > "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
-> 
+>
 > — Martin Fowler
 
 ## Combining Elements
@@ -437,6 +446,7 @@ When optimizing React applications, consider these key areas:
    - Use `useCallback()` for stable function references
 
 2. **Code Splitting**
+
    ```typescript
    const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
      loading: () => <LoadingSpinner />,
@@ -471,10 +481,12 @@ This comprehensive guide has showcased all the amazing features that Prose UI br
 📊 **Tables** - Clean, readable data presentation  
 🔔 **Callouts** - Eye-catching information boxes  
 🧮 **Math Support** - LaTeX formulas rendered beautifully  
-🎯 **Components** - Rich interactive elements  
+🎯 **Components** - Rich interactive elements
 
 <Callout variant="tip" title="Next Steps">
-Now that you've seen all the features, try creating your own blog posts! Experiment with different combinations of components to find what works best for your content.
+  Now that you've seen all the features, try creating your own blog posts!
+  Experiment with different combinations of components to find what works best
+  for your content.
 </Callout>
 
 ---
@@ -482,5 +494,3 @@ Now that you've seen all the features, try creating your own blog posts! Experim
 **Published:** November 9, 2024  
 **Author:** Dixit Tilaji  
 **Tags:** #webdev #react #nextjs #proseui #mdx
-
-

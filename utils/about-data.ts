@@ -54,17 +54,38 @@ export const openSourceContributions = [
     project: "LlamaIndex",
     path: "/LlamaIndex",
     prs: [
-      { title: "Add OpensearchVectorClient to conditionally check index existence for AOSS", type: "FIX", link: "https://github.com/run-llama/llama_index/pull/18560" },
+      {
+        title:
+          "Add OpensearchVectorClient to conditionally check index existence for AOSS",
+        type: "FIX",
+        link: "https://github.com/run-llama/llama_index/pull/18560",
+      },
     ],
   },
   {
     project: "Helper",
     path: "./Helper",
     prs: [
-      { title: "devIndicators configuration for test environment", type: "FIX", link: "https://github.com/antiwork/helper/pull/868" },
-      { title: "update image-attachments specs", type: "TEST", link: "https://github.com/antiwork/helper/pull/842" },
-      { title: "add a CI action for running e2e tests", type: "FEAT", link: "https://github.com/antiwork/helper/pull/798" },
-      { title: "update test environment setup and scripts for e2e testing", type: "FEAT", link: "https://github.com/antiwork/helper/pull/722" },
+      {
+        title: "devIndicators configuration for test environment",
+        type: "FIX",
+        link: "https://github.com/antiwork/helper/pull/868",
+      },
+      {
+        title: "update image-attachments specs",
+        type: "TEST",
+        link: "https://github.com/antiwork/helper/pull/842",
+      },
+      {
+        title: "add a CI action for running e2e tests",
+        type: "FEAT",
+        link: "https://github.com/antiwork/helper/pull/798",
+      },
+      {
+        title: "update test environment setup and scripts for e2e testing",
+        type: "FEAT",
+        link: "https://github.com/antiwork/helper/pull/722",
+      },
     ],
   },
 ];
@@ -135,7 +156,13 @@ export const education = {
   institution: "L.D College Of Engineering, Ahmedabad",
   period: "June 2020 — June 2024",
   cgpa: "8.34",
-  coursework: ["Data Structures", "Algorithms", "OOP", "DBMS", "Software Engineering"],
+  coursework: [
+    "Data Structures",
+    "Algorithms",
+    "OOP",
+    "DBMS",
+    "Software Engineering",
+  ],
 };
 
 export const contact = {

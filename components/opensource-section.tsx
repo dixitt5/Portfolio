@@ -32,7 +32,7 @@ export function OpenSourceSection() {
             <div className="font-black text-5xl md:text-6xl tracking-tighter">
               {openSourceContributions.reduce(
                 (acc, contribution) => acc + contribution.prs.length,
-                0
+                0,
               )}{" "}
               +
             </div>

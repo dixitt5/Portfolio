@@ -55,7 +55,9 @@ function ProjectCard({
       </div>
 
       {/* Tech Stack */}
-      <div className={`flex flex-wrap gap-2 mt-auto ${project.badge ? "pr-20" : ""}`}>
+      <div
+        className={`flex flex-wrap gap-2 mt-auto ${project.badge ? "pr-20" : ""}`}
+      >
         {project.tech.map((tech) => (
           <TechChip key={tech}>{tech}</TechChip>
         ))}
