@@ -71,7 +71,7 @@ export const openSourceContributions = [
 
 export const experience = [
   {
-    title: "Software Craftsperson",
+    title: "Software Craftsperson - II",
     company: "Incubyte",
     period: "Jul 2024 — Present",
     location: "Remote",
