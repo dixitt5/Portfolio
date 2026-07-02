@@ -13,7 +13,8 @@ export const posts: Post[] = [
   {
     slug: "quick-cue",
     title: "Quick Cue",
-    description: "How I built Quick Cue for better prompt management in browser",
+    description:
+      "How I built Quick Cue for better prompt management in browser",
     date: "2025-04-11",
     tags: ["browser apis", "motion", "react"],
     externalUrl: "https://blog.incubyte.co/blog/quick-cue-chrome-extension/",
@@ -34,11 +35,10 @@ export const posts: Post[] = [
 
 export function getAllPosts(): Post[] {
   return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
   return posts.find((post) => post.slug === slug);
 }
-

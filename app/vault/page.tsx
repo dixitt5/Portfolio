@@ -72,9 +72,7 @@ function VaultCard({ entry }: { entry: ResolvedVaultEntry }) {
           />
         </div>
 
-        <h2 className="m-0! text-xl font-bold tracking-tight">
-          {entry.title}
-        </h2>
+        <h2 className="m-0! text-xl font-bold tracking-tight">{entry.title}</h2>
 
         <p
           className="m-0! text-sm leading-relaxed line-clamp-3"
